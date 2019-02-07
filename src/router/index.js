@@ -9,6 +9,11 @@ import Brands from '../components/website/brands.vue'
 import Contact from '../components/website/contact.vue'
 import Properties from '../components/website/properties.vue'
 import Blog from '../components/website/blog.vue'
+//
+import TaskList from '../components/Task/List.vue'
+import TaskEdit from '../components/Task/Edit.vue'
+import TaskCreate from '../components/Task/Create.vue'
+import TaskDetails from '../components/Task/Details.vue'
 
 Vue.use(Router)
 
@@ -18,8 +23,7 @@ const router = new Router({
 		{
 			path: '/',
 			name: 'content',
-            component: Content,
-            props: true
+            component: Content
         },
         {
 			path: '/about',
@@ -36,8 +40,7 @@ const router = new Router({
         {
 			path: '/blog',
 			name: 'blog',
-            component: Blog,
-            props: true
+            component: Blog
 		},
         {
 			path: '/contact',
@@ -50,6 +53,36 @@ const router = new Router({
 			name: 'properties',
             component: Properties,
             props: true
+        },
+        {
+			path: '/tasks',
+			component: TaskList,
+			children: [
+				{
+					path: '',
+					name: 'tasks',
+					component: {
+						template: '<h2>Por favor selecciona una tarea</h2>'
+					}
+				},
+				{
+					path: 'create',
+					name: 'tasks.create',
+					component: TaskCreate
+				},
+				{
+					path: ':id',
+					name: 'tasks.details',
+					component: TaskDetails,
+					props: true
+				},
+				{
+					path: ':id/edit',
+					name: 'tasks.edit',
+					component: TaskEdit,
+					props: true
+				}
+			]
 		},
 		{
 			path: '/404',

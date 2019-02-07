@@ -8,7 +8,7 @@
 <script>
 import List_properties from './List.vue'
 export default {
-    name: 'mod_properties',
+    name: 'modproperties',
     components: {
         'list-properties': List_properties
     },

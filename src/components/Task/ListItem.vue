@@ -33,7 +33,7 @@ export default {
             this.$router.push(route);
         },
         toggleStatus() {
-            store.dispatch('toggleTask',this.task);
+            store.dispatch('toggleTask', this.task);
         }
     }
 }

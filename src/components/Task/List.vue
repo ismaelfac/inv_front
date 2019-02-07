@@ -7,7 +7,7 @@
             </div>
 
             <ul class="list-group tasks-list">
-                <task-item v-for="(task) in tasks" :key="task.id" :task="task"></task-item>
+                <task-item v-for="(task, index) in tasks" :key="task.id" :task="task"></task-item>
             </ul>
 
             <p><a @click="deleteCompleted">Eliminar tareas completadas</a></p>            
@@ -19,7 +19,8 @@
 </template>
 
 <script>
-import store from '../store'
+import store from 'store'
+// mapState
 import TaskItem from './ListItem.vue'
 
 export default {
@@ -48,7 +49,3 @@ export default {
         margin-bottom: 40px;
     }
 </style>
-
-
-
-

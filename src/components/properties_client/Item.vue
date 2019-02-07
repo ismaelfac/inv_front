@@ -5,25 +5,25 @@
                 <span v-if="property.for_sale" class="for-sale">Venta</span>
                 <span v-if="property.for_rent" class="for-sale">Arriendo</span>
                 <span v-if="property.for_transfer" class="for-sale">Arriendo/Venta</span>
-                <a href="#!" @click.prevent="details_property"><img src="images/flat/1.jpg" alt=""></a>
+                <a href="#!" @click.prevent="details_property"><img src="/src/assets/website/images/flat/1.jpg" alt=""></a>
                 <div class="flat-link">
                     <a href="#!" @click.prevent="details_property">Ver Detalles</a>
                 </div>
                 <ul class="flat-desc">
                     <li>
-                        <img src="images/icons/4.png" alt="">
+                        <img src="/src/assets/website/images/icons/4.png" alt="">
                         <span>{{ property.area }}</span>
                     </li>
                     <li>
-                        <img src="images/icons/5.png" alt="">
+                        <img src="/src/assets/website/images/icons/5.png" alt="">
                         <span>{{ property.bedrooms }}</span>
                     </li>
                     <li>
-                        <img src="images/icons/6.png" alt="">
+                        <img src="/src/assets/website/images/icons/6.png" alt="">
                         <span>{{ property.bathrooms }}</span>
                     </li>
                     <li>
-                        <img src="images/icons/13.png" alt="">
+                        <img src="/src/assets/website/images/icons/13.png" alt="">
                         <span>{{ property.stratum }}</span>
                     </li>
                 </ul>
@@ -35,7 +35,7 @@
                     <span v-if="property.for_rent" class="price">{{ property.rent_price_label}}</span>
                     <span v-if="property.for_transfer" class="price">{{ property.rent_price_label}} / {{ property.sale_price_label}}</span>
                 </div>
-                <p><img src="images/icons/location.png" alt="">{{ property.address }}</p>
+                <p><img src="/src/assets/website/images/icons/location.png" alt="">{{ property.address }}</p>
             </div>
         </div>
     </div>

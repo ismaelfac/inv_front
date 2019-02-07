@@ -20,7 +20,9 @@
 <!-- Start page content -->
 <section id="page-content" class="page-wrapper">
 
-    componente Propiedades
+    <div class="blog-area pt-115 pb-120">
+        <properties></properties>
+    </div>
              
     <!-- SUBSCRIBE AREA START -->
         <subscribe></subscribe>
@@ -30,10 +32,12 @@
 </template>
 <script>
 import subscribe from '../subscribe/subscribe.vue'
+import properties from '../properties_client/properties.vue'
 export default {
     name:'properties',
     components: {
-        subscribe
+        subscribe,
+        properties
     }
 }
 </script>
