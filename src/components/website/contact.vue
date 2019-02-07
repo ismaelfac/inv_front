@@ -1,4 +1,22 @@
 <template>
+    <div>
+        <!-- BREADCRUMBS AREA START -->
+        <div class="breadcrumbs-area bread-bg-about_us bg-opacity-black-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="breadcrumbs">
+                            <h2 class="breadcrumbs-title"></h2>
+                            <ul class="breadcrumbs-list">
+                                <router-link tag="li" to='/'><a>Inicio</a></router-link>
+                                <li>Contactenos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- BREADCRUMBS AREA END -->
     <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
 
@@ -61,13 +79,19 @@
             <!-- CONTACT AREA END -->
 
             <!-- SUBSCRIBE AREA START -->
-                SUBSCRIBE
-            <!-- SUBSCRIBE AREA END -->
+                <subscribe></subscribe>
+            <!-- SUBSCRIBE AREA END --> 
         </section>
-        <!-- End page content -->
+    <!-- End page content -->
+    </div>
+    
 </template>
 <script>
+import subscribe from '../subscribe/subscribe.vue'
 export default {
-    name:'contact'
+    name:'contact',
+    components: {
+        subscribe
+    }
 }
 </script>

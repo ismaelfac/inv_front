@@ -188,14 +188,18 @@
             <!-- BRAND AREA END -->
             
             <!-- SUBSCRIBE AREA START -->
-                SUBSCRIBE
-            <!-- SUBSCRIBE AREA END -->
+                <subscribe></subscribe>
+            <!-- SUBSCRIBE AREA END --> 
         </section>
         <!-- End page content -->  
     </div>
 </template>
 <script>
+import subscribe from '../subscribe/subscribe.vue'
 export default {
-    name:'brands'
+    name:'brands',
+    components: {
+        subscribe
+    }
 }
 </script>

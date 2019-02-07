@@ -22,6 +22,7 @@ window.clone = function (obj) {
 	return JSON.parse(JSON.stringify(obj));
 }
 Vue.component('app-icon', require('./components/Icon.vue'));
+Vue.component('subscribe', require('./components/subscribe/subscribe.vue'));
 
 var vm = new Vue({
   el: '#app',

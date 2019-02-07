@@ -166,22 +166,35 @@
             </div>
             <!-- OUR AGENTS AREA END -->
 
-            
+            <!-- TESTIMONIAL AREA START -->
+            <div class="brand-area pb-115">
+                <testimonial></testimonial>
+            </div>
             <!-- TESTIMONIAL AREA END -->
 
             <!-- BRAND AREA START -->
-               BRANDS
+            <div class="brand-area pb-115">
+               <brands></brands>
+            </div>
             <!-- BRAND AREA END -->
             
             <!-- SUBSCRIBE AREA START -->
-             SUBSCRIBE
-            <!-- SUBSCRIBE AREA END -->
+                <subscribe></subscribe>
+            <!-- SUBSCRIBE AREA END --> 
         </section>
         <!-- End page content -->
     </div>
 </template>
 <script>
+import subscribe from '../subscribe/subscribe.vue'
+import testimonial from '../testimonial/List.vue'
+import brands from '../brands/List.vue'
 export default {
-    name:'About'
+    name:'About',
+    components: {
+        subscribe,
+        testimonial,
+        brands
+    }
 }
 </script>

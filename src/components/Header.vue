@@ -76,10 +76,10 @@
                                     <ul class="main-menu text-center">
                                         <router-link tag="li" to="/" exact><a>Inicio</a></router-link>
                                         <router-link tag="li" to="about"><a>Sobre Nosotros</a></router-link>
-                                        <router-link tag="li" to="/"><a>Marca</a></router-link>
-                                        <router-link tag="li" to="/"><a>Blog</a></router-link>
-                                        <router-link tag="li" to="/"><a>Portafolio</a></router-link>
-                                        <router-link tag="li" to="/"><a>Contacto</a></router-link>
+                                        <router-link tag="li" to="/brands"><a>Marca</a></router-link>
+                                        <router-link tag="li" to="/blog"><a>Blog</a></router-link>
+                                        <router-link tag="li" to="/properties"><a>Portafolio</a></router-link>
+                                        <router-link tag="li" to="/contact"><a>Contacto</a></router-link>
                                     </ul>
                                 </nav>
                             </div>
@@ -101,9 +101,9 @@
                                     <router-link tag="li" to="/" exact><a>Inicio</a></router-link>
                                     <router-link tag="li" to="/about"><a>Sobre Nosotros</a></router-link>
                                     <router-link tag="li" to="/brands"><a>Marca</a></router-link>
-                                    <router-link tag="li" to="/"><a>Blog</a></router-link>
-                                    <router-link tag="li" to="/"><a>Portafolio</a></router-link>
-                                    <router-link tag="li" to="/"><a>Contacto</a></router-link>         
+                                    <router-link tag="li" to="/blog"><a>Blog</a></router-link>
+                                    <router-link tag="li" to="/properties"><a>Portafolio</a></router-link>
+                                    <router-link tag="li" to="/contact"><a>Contacto</a></router-link>         
                                 </ul>
                             </nav>
                         </div>
