@@ -223,6 +223,12 @@
 </template>
 <script>
 export default {
-    name: 'Header'
+    name: 'Header',
+    methods:{
+      logout(){
+        this.$store.commit('logout');
+        this.$router.push('/login');
+      }
+    }
 }
 </script>

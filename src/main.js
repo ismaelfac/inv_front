@@ -1,8 +1,7 @@
 import '@babel/polyfill'
 import Vue from 'vue'
-import VeeValidate from 'vee-validate';
-import VueRouter from 'vue-router'
-import {routes} from './routes'
+import VeeValidate from 'vee-validate'
+import router from './router'
 import App from './components/App.vue'
 
 Vue.use(VeeValidate, {
@@ -23,11 +22,8 @@ window.clone = function (obj) {
 	return JSON.parse(JSON.stringify(obj));
 }
 Vue.component('app-icon', require('./components/Icon.vue'));
-const router = new VueRouter({
-  routes,
-  mode: 'history'
-});
-new Vue({
+
+var vm = new Vue({
   el: '#app',
   router,
   render: h => h(App)
