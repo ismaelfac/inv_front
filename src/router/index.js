@@ -18,12 +18,14 @@ const router = new Router({
 		{
 			path: '/',
 			name: 'content',
-			component: Content
+            component: Content,
+            props: true
         },
         {
 			path: '/about',
 			name: 'about',
-			component: About
+            component: About,
+            props: true
         },
         {
 			path: '/brands',

@@ -98,12 +98,12 @@
                         <div class="mobile-menu">
                             <nav id="dropdown">
                                 <ul>
-                                    <router-link tag="li" to="/" exact><a>Inicio</a></router-link>
-                                    <router-link tag="li" to="/about"><a>Sobre Nosotros</a></router-link>
-                                    <router-link tag="li" to="/brands"><a>Marca</a></router-link>
-                                    <router-link tag="li" to="/blog"><a>Blog</a></router-link>
-                                    <router-link tag="li" to="/properties"><a>Portafolio</a></router-link>
-                                    <router-link tag="li" to="/contact"><a>Contacto</a></router-link>         
+                                    <router-link tag="li" :to="{name: 'content'}" exact><a>Inicio</a></router-link>
+                                    <router-link tag="li" :to="{name: 'about'}"><a>Sobre Nosotros</a></router-link>
+                                    <router-link tag="li" :to="{name: 'brands'}"><a>Marca</a></router-link>
+                                    <router-link tag="li" :to="{name: 'blog'}"><a>Blog</a></router-link>
+                                    <router-link tag="li" :to="{name: 'properties'}"><a>Portafolio</a></router-link>
+                                    <router-link tag="li" :to="{name: 'contact'}"><a>Contacto</a></router-link>         
                                 </ul>
                             </nav>
                         </div>
