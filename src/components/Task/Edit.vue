@@ -1,5 +1,5 @@
 <script>
-import store from 'store'
+import store from '../../store'
 import Form from './Form.vue'
 
 export default {

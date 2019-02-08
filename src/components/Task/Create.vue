@@ -1,13 +1,13 @@
 <script>
-import store from 'store'
+import store from '../../store'
 import Form from './Form.vue'
 
 export default {
     render(createElement) {
         return createElement(Form, {
             props: {
-                title: 'Nueva tarea',
-                action: 'Crear tarea',
+                title: 'Nueva Clasificado',
+                action: 'Crear Clasificado',
                 task: {
                     title: '',
                     description: ''

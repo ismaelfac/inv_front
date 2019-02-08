@@ -1,25 +1,29 @@
 <template>
-	<div class="row">
-        <div class="col-xs-6 col-md-6">
-            <div class="top">
-                <h2>Tareas</h2>
-                <router-link :to="{ name: 'tasks.create' }">Nueva tarea</router-link>
+    <section id="page-content" class="page-wrapper">
+        <div class="about-sheltek-area ptb-115">
+            <div class="container">
+                <div class="col-xs-6 col-md-6">
+                    <div class="top">
+                        <h2>Clasificados</h2>
+                        <router-link tag="a" :to="{ name: 'tasks.create' }" class="btn btn-success">Nueva Clasificado</router-link>
+                    </div>
+
+                    <ul class="list-group tasks-list">
+                        <task-item v-for="(task) in tasks" :key="task.id" :task="task"></task-item>
+                    </ul>
+
+                    <p><a @click="deleteCompleted">Eliminar Clasificados Revisados</a></p>            
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <router-view></router-view>
+                </div>
             </div>
-
-            <ul class="list-group tasks-list">
-                <task-item v-for="(task, index) in tasks" :key="task.id" :task="task"></task-item>
-            </ul>
-
-            <p><a @click="deleteCompleted">Eliminar tareas completadas</a></p>            
         </div>
-        <div class="col-xs-6 col-md-6">
-            <router-view></router-view>
-        </div>
-	</div>
+    </section>
 </template>
 
 <script>
-import store from 'store'
+import store from '../../store'
 // mapState
 import TaskItem from './ListItem.vue'
 

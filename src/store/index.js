@@ -48,43 +48,6 @@ export default new Vuex.Store({
                 resolve(newTask)
             })            
         },
-<<<<<<< HEAD
-        createProperty(context,{ title, description }) {
-            return new Promise((resolve, reject) => {
-                let newProperty = {
-                    id: context.state.properties.length + 1,
-                    title,
-                    description,
-                    pending: true
-                }    
-                context.commit('createProperty', newProperty)
-                resolve(newProperty)
-            })            
-        },
-        updateTask(context, payload) {
-            context.commit('updateTask', payload)
-        },
-        updateProperty(context, payload) {
-            context.commit('updateProperty', payload)
-        },
-        toggleTask(context, task){
-            context.commit('toggleTask', task)
-        },
-        toggleProperty(context, property){
-            context.commit('toggleProperty', property)
-        },
-        deleteTask(context, id){
-            context.commit('deleteTask', id)
-        },
-        deleteProperty(context, id){
-            context.commit('deleteProperty', id)
-        },
-        deleteCompletedTasks(context){
-            context.commit('deleteCompletedTasks')
-        },
-        deleteCompletedProperties(context){
-            context.commit('deleteCompletedProperties')
-=======
         updateTask(context, payload) {
             context.commit('updateTask', payload)
         },
@@ -96,7 +59,6 @@ export default new Vuex.Store({
         },
         deleteCompletedTasks(context){
             context.commit('deleteCompletedTasks')
->>>>>>> 2606621664cb76ab783da1dddc55bd575ef271ea
         }
     }
 })
