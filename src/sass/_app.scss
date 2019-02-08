@@ -1,4 +1,14 @@
 
 @import "./variables";
 
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../src/assets/website/css/bootstrap";
+@import "../../src/assets/website/lib/css/nivoslider";
+@import "../../src/assets/website/css/core.css";
+@import "../../src/assets/website/css/shortcode/shortcodes.css";
+@import "../../src/assets/website/style.css";
+@import "../../src/assets/website/css/responsive.css";
+@import "../../src/assets/website/css/color/color-core.css";
+@import "/src/assets/website/css/custom.css";
+
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+

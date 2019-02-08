@@ -11,7 +11,6 @@
                     <ul class="list-group tasks-list">
                         <task-item v-for="(task) in tasks" :key="task.id" :task="task"></task-item>
                     </ul>
-
                     <p><a @click="deleteCompleted">Eliminar Clasificados Revisados</a></p>            
                 </div>
                 <div class="col-xs-6 col-md-6">
