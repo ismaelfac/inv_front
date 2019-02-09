@@ -4,7 +4,7 @@
         <div class="media">
             <a @click.stop="toggleStatus" class="media-left">
                 <app-icon :img="task.pending ? 'unchecked' : 'check'"></app-icon>
-                 <img src="/src/assets/website/images/avatar/1.jpg" alt="">
+                 <img class="img_comment" :src="task.user_img" alt="">
             </a>
            
             <div class="media-body">
@@ -54,6 +54,11 @@ export default {
 
         a {
             text-decoration: none;
+        }
+
+        .img_comment {
+            width: 81px;
+            height: 72px;   
         }
 
         .description {

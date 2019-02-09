@@ -9,7 +9,7 @@
                     </div>
 
                     <div class="pro-details-feedback">
-                        <task-item v-for="(task) in comments" :key="task.id" :task="task"></task-item>
+                        <task-item v-for="task in comments" :key="task.id" :task="task"></task-item>
                     </div>
                     <p><a @click="deleteCompleted">Eliminar Clasificados Revisados</a></p>            
                 </div>
