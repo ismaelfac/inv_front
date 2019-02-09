@@ -10,7 +10,6 @@
             <div class="media-body">
                 <h6 class="media-heading"><span class="description">{{ task.title }}</span></h6>
                 <p><span>6 hour ago</span>{{ task.description }}</p>
-                <a href="#">Reply</a>
             </div>
         </div>
     </li>
