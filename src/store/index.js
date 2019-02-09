@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import tasks from './tasks.js'
+import comments from './comments.js'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        tasks
+        tasks,
+        comments
     },
     getters: {
         findTask(state) {
@@ -13,6 +16,13 @@ export default new Vuex.Store({
          		let task = state.tasks.find(task => task.id == id)
                 not_found_unless(task);
                 return task;    
+            }
+        },
+        findComments(state){
+            return function (id){
+                let commment = state.comments.find(comment => comment.id == id)
+                not_found_unless(comment);
+                return comment;
             }
         }
     },

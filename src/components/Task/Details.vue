@@ -15,7 +15,7 @@
 				<app-icon img="edit"></app-icon> Editar
 			</button>
 			<button @click="commentTask" class="btn" :class="!commentOn ? 'btn-default' : 'btn-danger'">
-				<app-icon img="thumbs-up"></app-icon> <span v-text="!commentOn ? 'Comentar' : 'Cancelar'"></span>
+				<app-icon :img="!commentOn ? 'thumbs-up' : 'remove-sign'"></app-icon><span v-text="!commentOn ? 'Comentar' : 'Cancelar'"></span>
 			</button>
 			<button @click="viewTask" class="btn dropdown-toggle" :class="!viewTasks ? 'btn-default' : 'btn-primary'">
 				<app-icon :img="!viewTasks ? 'eye-open' : 'eye-close'"></app-icon><span v-text="!viewTasks ? 'Ver Comentarios' : 'Ocultar Comentarios'"></span>
@@ -24,6 +24,18 @@
 				<app-icon img="trash"></app-icon> Eliminar
 			</button>
 			</div>
+			<div class="well" v-if="commentOn">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="input-group">
+							<textarea name="comment_response_draft" v-model="comment_response_draft" cols="50" rows="2" style="text-align: justify"></textarea>
+							<span class="input-group-btn">
+								<button class="btn btn-success" @click="send_comment_response_draft" type="button">Enviar</button>
+							</span>
+						</div><!-- /input-group -->
+					</div>
+				</div>
+			</div><!-- /.col-lg-6 -->
 		</div>
             <!-- media -->
 		<div v-if="viewTasks">
@@ -64,7 +76,8 @@
 		data() {
 			return{
 				viewTasks: false,
-				commentOn: false
+				commentOn: false,
+				comment_response_draft: ''
 			}
 		},
 		computed: {
@@ -87,11 +100,16 @@
 				this.$router.replace({ name: 'tasks' });
 			},
 			commentTask() {
-				this.commentOn = !this.commentOn
+				
+				this.comment_response_draft = ''
+				this.commentOn = !this.commentOn;
 			},
 			viewTask() {
 				//alert('viewTasks');
 				this.viewTasks = !this.viewTasks
+			},
+			send_comment_response_draft() {
+				alert('Mensaje Enviado'+ this.comment_response_draft)
 			}
 		}
 	}

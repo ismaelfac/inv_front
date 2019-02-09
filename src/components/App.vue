@@ -30,7 +30,7 @@ export default {
   @import "../assets/website/css/custom.css";*/
 </style>
 <style lang="scss">
-    @import "../sass/app";
+    //@import "../sass/app";
 </style>
 
 
