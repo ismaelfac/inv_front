@@ -17,12 +17,12 @@ Note: This core style file includes all external plugins css file.
 
 /*Plugins*/
 @import url("./plugins/animate.css");
-@import url("./plugins/jquery-ui.min.css");
+@import "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/black-tie/jquery-ui.min.css";
 @import url("./plugins/bootstrap-select.css");
 @import url("./plugins/meanmenu.min.css");
 @import url("./plugins/slick.css");
 @import url("./plugins/lightbox.min.css");
-@import url("./plugins/jquery.mb.YTPlayer.min.css");
+@import "https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.2.9/css/jquery.mb.YTPlayer.min.css";
 @import url("./plugins/textanimate.css");
 
 

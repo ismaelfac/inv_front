@@ -1,13 +1,17 @@
 <template>
     <div>
-        <h2 class="subtitle">{{ title }}</h2>
+        <div class="post-title-time">
+            <h2 class="subtitle">{{ title }}</h2>
+            <p>July 30, 2016 / 10 am</p>
+        </div>
+        
 
         <form @submit.prevent="validateBeforeSubmit">
             <div class="form-group">
                 <label for="title">Título</label>
                 <input name="title" type="text" v-model="draft.title" class="form-control" id="title" v-validate="'required'">
                 <div v-show="errors.has('title')" class="alert alert-danger" role="alert">
-                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span aria-hidden="true"><app-icon img="exclamation-sign"></app-icon></span>
                     <span>{{ errors.first('title') }}</span>
                 </div>
                 
@@ -28,7 +32,11 @@
 </template>
 
 <script>
+import Icon from '../Icon.vue'
 	export default {
+        components:{
+            'app-icon': Icon
+        },
         inject: ['$validator'],
 		props: ['title', 'action', 'task'],
 		data() {

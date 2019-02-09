@@ -8,9 +8,9 @@
                         <router-link tag="a" :to="{ name: 'tasks.create' }" class="btn btn-success">Nueva Clasificado</router-link>
                     </div>
 
-                    <ul class="list-group tasks-list">
+                    <div class="pro-details-feedback">
                         <task-item v-for="(task) in tasks" :key="task.id" :task="task"></task-item>
-                    </ul>
+                    </div>
                     <p><a @click="deleteCompleted">Eliminar Clasificados Revisados</a></p>            
                 </div>
                 <div class="col-xs-6 col-md-6">

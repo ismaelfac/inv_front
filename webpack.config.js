@@ -1,9 +1,9 @@
 var path = require('path')
 var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
-
 var glob = require('glob')
 var PurifyCSSPlugin = require('purifycss-webpack')
+
 var inProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
@@ -50,7 +50,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("style.css"),
+    new ExtractTextPlugin({
+      filename: "style.css",
+      disable: !inProduction
+    }),
     new PurifyCSSPlugin({
       paths: glob.sync(path.join(__dirname, 'src/*.vue')),
       purifyOptions: {

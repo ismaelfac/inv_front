@@ -1,18 +1,28 @@
 <template>
     <li @click="select" class="list-group-item task-list-item"
         :class="{active: isActive, completed: !task.pending}">
-        <a @click.stop="toggleStatus">
-            <app-icon :img="task.pending ? 'unchecked' : 'check'"></app-icon>
-        </a>
-
-        <span class="description">{{ task.title }}</span>
+        <div class="media">
+            <a @click.stop="toggleStatus" class="media-left">
+                <app-icon :img="task.pending ? 'unchecked' : 'check'"></app-icon>
+                 <img src="/src/assets/website/images/avatar/1.jpg" alt="">
+            </a>
+           
+            <div class="media-body">
+                <h6 class="media-heading"><span class="description">{{ task.title }}</span></h6>
+                <p><span>6 hour ago</span>{{ task.description }}</p>
+                <a href="#">Reply</a>
+            </div>
+        </div>
     </li>
 </template>
 
 <script>
-import store from '../../store';
-
+import store from '../../store'
+import Icon from '../Icon.vue'
 export default {
+    components:{
+        'app-icon': Icon
+    },
     data() {
         return {
             draft: ''
@@ -41,8 +51,7 @@ export default {
 
 <style lang="scss">
     .list-group-item.task-list-item {
-        display: flex;
-        justify-content: space-between;
+   
 
         a {
             text-decoration: none;
