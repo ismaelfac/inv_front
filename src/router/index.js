@@ -15,7 +15,7 @@ import TaskEdit from '../components/Task/Edit.vue'
 import TaskCreate from '../components/Task/Create.vue'
 import TaskDetails from '../components/Task/Details.vue'
 
-import Posts from '../components/posts/posts_client.vue'
+import Posts from '../views/website/blog.vue'
 import PostDetails from '../components/posts/post_details.vue'
 Vue.use(Router)
 

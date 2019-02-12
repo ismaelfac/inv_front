@@ -6,7 +6,7 @@
         </div>
         <!-- blog-details-title-time -->
         <div class="blog-details-title-time">
-            <h5>{{ post.title }}</h5>
+            <h5>Id{{ post.id}}: {{ post.title }}</h5>
             <p>{{ post.created_at}}</p>
         </div>
         <!-- blog-details-desctiption -->

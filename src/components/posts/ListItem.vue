@@ -7,11 +7,11 @@
                 </div>
                 <div class="blog-info">
                     <div class="post-title-time">
-                        <h5><a href="#">{{ post.title}}</a></h5>
+                        <h5><a @click="select">{{ post.title}}</a></h5>
                         <p>{{ post.created_at }}</p>
                     </div>
-                    <p style="text-align:justify"><b>{{ post.title}}</b> {{ post.description | capitalize | replaceHello }} </p>
-                    <a class="read-more" href="#">Leer Mas...</a>
+                    <p style="text-align:justify"><b>{{ post.title}}</b> {{ post.description }} </p>
+                    <a class="read-more" @click="select">Leer Mas...</a>
                 </div>  
             </div>
         </template>
@@ -63,17 +63,12 @@ export default {
         }
     },
     computed: {
-        isActive() {
-            return this.post.id == this.$route.params.id;
-        }
+       
     },
     methods: {
         select() {
-            alert('entro')
-            let route = this.isActive
-                ? {name: 'posts'}
-                : {name: 'posts.details', params: {id: this.post.id}};
-
+            let route = { name: 'posts.details', params: {id: this.post.id}};
+            console.log(route);
             this.$router.push(route);
         }
     },

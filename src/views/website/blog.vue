@@ -29,12 +29,12 @@
                     <div class="row">
                         <div class="col-md-8 col-xs-12">
                             <div class="row">
-                            <template v-if="post">
-                                    <post-details :post="post"></post-details>
-                            </template>
-                            <template v-else>
-                                <list-item v-for="post in posts" :key="post.id" :post="post" :carousel="false"></list-item>
-                            </template>      
+                                <div class="col-md-12" v-if="{id}">
+                                    <router-view></router-view>
+                                </div>                               
+                                <div>
+                                    <list-item v-for="post in posts" :key="post.id" :post="post" :carousel="false"></list-item>
+                                </div>
                             </div>               
                         </div>   
                         <div class="col-md-4 col-xs-12">
@@ -186,21 +186,15 @@
 import store from '../../store'
 import blog from '../../components/blog/List.vue'
 import posts from '../../components/posts/ListItem.vue'
-import post_details from '../../components/posts/post_details.vue'
 import subscribe from '../../components/subscribe/subscribe.vue'
 export default {
     name: 'blog',
     components: {
         subscribe,
         blog,
-        'list-item': posts,
-        'post-details': post_details
+        'list-item': posts
     },
-    data () {
-        return {
-            post: false
-        }
-    },
+    props:['id'],
     computed: {
         posts: () => store.state.posts,
         categories: () => store.state.categories
