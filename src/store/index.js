@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import tasks from './tasks.js'
 import comments from './comments.js'
-import posts from './posts.js'
+import posts from './modules/posts.js'
 
 Vue.use(Vuex)
 
