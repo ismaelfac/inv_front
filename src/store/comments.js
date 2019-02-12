@@ -7,6 +7,7 @@ let comments = [
         title: 'Aprender Vue.js',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Maecenas sed nunc recomienda Styde in diam pulvinar pellentesque.Maecenas sagittis quam ac orci feugiat hendrerit ac ac mauris.',
         pending: true,
+        created_at: '2019/02/09'
     },
     {
         id: '2',

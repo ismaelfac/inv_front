@@ -3,12 +3,12 @@ import Router from 'vue-router'
 
 import ErrorNotFound from '../components/errors/NotFound.vue'
 
-import Content from '../components/Content.vue'
-import About from '../components/website/about.vue'
-import Brands from '../components/website/brands.vue'
-import Contact from '../components/website/contact.vue'
-import Properties from '../components/website/properties.vue'
-import Blog from '../components/website/blog.vue'
+import Content from '../views/Content.vue'
+import About from '../views/website/about.vue'
+import Brands from '../views/website/brands.vue'
+import Contact from '../views/website/contact.vue'
+import Properties from '../views/website/properties.vue'
+import Blog from '../views/website/blog.vue'
 //
 import TaskList from '../components/Task/List.vue'
 import TaskEdit from '../components/Task/Edit.vue'
@@ -45,8 +45,7 @@ const router = new Router({
         {
 			path: '/contact',
 			name: 'contact',
-            component: Contact,
-            props: true
+            component: Contact
         },
         {
 			path: '/properties',

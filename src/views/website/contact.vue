@@ -1,22 +1,5 @@
 <template>
     <div>
-        <!-- BREADCRUMBS AREA START -->
-        <div class="breadcrumbs-area bread-bg-about_us bg-opacity-black-70">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="breadcrumbs">
-                            <h2 class="breadcrumbs-title"></h2>
-                            <ul class="breadcrumbs-list">
-                                <router-link tag="li" to='/'><a>Inicio</a></router-link>
-                                <li>Contactenos</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <!-- BREADCRUMBS AREA END -->
     <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
 
@@ -39,8 +22,8 @@
                                             <img src="/src/assets/website/images/icons/location-2.png" alt="">
                                         </div>
                                         <div class="contact-address-info">
-                                            <span>8901 Marmora Raod, New Yourk City  </span>
-                                            <span>25 Glasgow, D04  89GR</span>
+                                            <span>{{ contacts.site }} </span>
+                                            <span>{{ contacts.address }}</span>
                                         </div>
                                     </li>
                                     <li>
@@ -48,8 +31,7 @@
                                             <img src="/src/assets/website/images/icons/phone-3.png" alt="">
                                         </div>
                                         <div class="contact-address-info">
-                                            <span>Telephone : (801) 4256  9856</span>
-                                            <span>Telephone : (801) 4256  9658</span>
+                                            <span v-for="phone in contacts.phone" :key="phone.id">Telefonos {{ phone }}</span>
                                         </div>
                                     </li>
                                     <li>
@@ -57,8 +39,8 @@
                                             <img src="/src/assets/website/images/icons/world.png" alt="">
                                         </div>
                                         <div class="contact-address-info">
-                                            <span>Email : info@sheltek.com</span>
-                                            <span>Web :<a href="#" target="_blank"> www.sheltek.com</a></span>
+                                            <span>Email : {{ contacts.email }}</span>
+                                            <span>Web :<a> {{ contacts.web }}</a></span>
                                         </div>
                                     </li>
                                 </ul>
@@ -87,11 +69,25 @@
     
 </template>
 <script>
-import subscribe from '../subscribe/subscribe.vue'
+import subscribe from '../../components/subscribe/subscribe.vue'
 export default {
     name:'contact',
     components: {
         subscribe
+    },
+    data(){
+        return{
+            contacts: {
+                site:'sitio de Inveriones',
+                address: 'Direccion de Inversiones',
+                phone: [
+                    '3113232323',
+                    '3213233'
+                ],
+                email: 'directora@inversionesyproyectos.com',
+                web: 'Inversionesyproyectos.coms'
+            }
+        }
     }
 }
 </script>

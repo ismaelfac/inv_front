@@ -31,8 +31,8 @@
     </div>
 </template>
 <script>
-import subscribe from '../subscribe/subscribe.vue'
-import properties from '../properties_client/properties.vue'
+import subscribe from '../../components/subscribe/subscribe.vue'
+import properties from '../../components/properties_client/properties.vue'
 export default {
     name:'properties',
     components: {

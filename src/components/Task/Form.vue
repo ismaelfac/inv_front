@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import Icon from '../Icon.vue'
+import Icon from '../../views/Icon.vue'
 	export default {
         components:{
             'app-icon': Icon

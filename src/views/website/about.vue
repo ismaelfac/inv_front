@@ -186,9 +186,9 @@
     </div>
 </template>
 <script>
-import subscribe from '../subscribe/subscribe.vue'
-import testimonial from '../testimonial/List.vue'
-import brands from '../brands/List.vue'
+import subscribe from '../../components/subscribe/subscribe.vue'
+import testimonial from '../../components/testimonial/List.vue'
+import brands from '../../components/brands/List.vue'
 export default {
     name:'About',
     components: {

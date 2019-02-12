@@ -1,0 +1,51 @@
+<template>
+    <div class="col-md-12">
+        <article class="blog-item bg-gray">
+            <div class="blog-image">
+                <a href="#"><img :src="post.img_post" alt=""></a>
+            </div>
+            <div class="blog-info">
+                <div class="post-title-time">
+                    <h5><a href="#">{{ post.title}}</a></h5>
+                    <p>{{ post.created_at }}</p>
+                </div>
+                <p style="text-align:justify"><b>{{ post.title}}</b> {{ post.description | capitalize | replaceHello }} </p>
+                <a class="read-more" href="#">Leer Mas...</a>
+            </div>  
+        </article>
+    </div>
+</template>
+<script>
+export default {
+    name:'Post-Item',
+    props:['post'],
+    filters: {
+       uppercase: function (str) {
+            return str.toUpperCase()
+        },
+        lowercase: function (str) {
+            return str.toLowerCase()
+        },
+        capitalize: function (str) {
+            str = str.toLowerCase()
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        },
+        capitalizeAll: function (str) {
+            return str.replace(/\w\S*/g, function(str) { 
+                return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase()
+            })
+        },
+        replaceHello: function (str) {
+            return str.replace('soy un', 'Hello')
+        },
+        replaceWorld: function (str) {
+            return str.replace('mensaje de prueba', 'World!')
+        }
+    },
+    methods: {
+        limitCaracters(){
+
+        }
+    },
+}
+</script>

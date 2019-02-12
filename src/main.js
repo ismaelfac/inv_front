@@ -2,7 +2,7 @@ import '@babel/polyfill'
 import Vue from 'vue'
 import VeeValidate from 'vee-validate'
 import router from './router'
-import App from './components/App.vue'
+import App from './views/App.vue'
 
 Vue.use(VeeValidate, {
 	validity: true
@@ -21,7 +21,6 @@ window.not_found_unless = function (condition) {
 window.clone = function (obj) {
 	return JSON.parse(JSON.stringify(obj));
 }
-Vue.component('app-icon', require('./components/Icon.vue'));
 
 var vm = new Vue({
   el: '#app',

@@ -9,7 +9,7 @@
            
             <div class="media-body">
                 <h6 class="media-heading"><span class="description">{{ task.title }}</span></h6>
-                <p><span>6 hour ago</span>{{ task.description }}</p>
+                <p><span>6 hour ago</span><span class="description">{{ task.description }}</span></p>
             </div>
         </div>
     </li>
@@ -17,7 +17,7 @@
 
 <script>
 import store from '../../store'
-import Icon from '../Icon.vue'
+import Icon from '../../views/Icon.vue'
 export default {
     components:{
         'app-icon': Icon
@@ -49,8 +49,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .list-group-item.task-list-item {
-   
+    .list-group-item.task-list-item { 
 
         a {
             text-decoration: none;

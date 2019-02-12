@@ -195,7 +195,7 @@
     </div>
 </template>
 <script>
-import subscribe from '../subscribe/subscribe.vue'
+import subscribe from '../../components/subscribe/subscribe.vue'
 export default {
     name:'brands',
     components: {

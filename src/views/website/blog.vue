@@ -179,8 +179,8 @@
     </div>
 </template>
 <script>
-import blog from '../blog/List.vue'
-import subscribe from '../subscribe/subscribe.vue'
+import blog from '../../components/blog/List.vue'
+import subscribe from '../../components/subscribe/subscribe.vue'
 export default {
     name: 'blog',
     components: {
