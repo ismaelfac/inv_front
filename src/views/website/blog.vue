@@ -40,6 +40,10 @@
                         <div class="col-md-4 col-xs-12">
                             <!-- widget-search -->
                             <aside class="widget widget-search mb-30">
+                                <a href="" @click="get_classifieds" class="btn btn-danger btn-block">Quiero registrar un Inmueble</a>
+                            </aside>
+                            <!-- widget-search -->
+                            <aside class="widget widget-search mb-30">
                                 <form action="#">
                                     <input type="text" name="search" placeholder="Buscar...">
                                     <button type="button" class="" @click="search_post"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -55,7 +59,7 @@
                             </aside>
                             <!-- widget-recent-post -->
                             <aside class="widget widget-recent-post mb-50">
-                                <h5>Recent Post</h5>
+                                <h5>Lo ultimo en Inmuebles</h5>
                                 <div class="row">
                                     <!-- blog-item -->
                                     <div class="col-md-12 col-sm-6 col-xs-12">
@@ -196,6 +200,9 @@ export default {
     methods: {
         search_post() {
             alert('Iniciando busqueda...')
+        },
+        get_classifieds() {
+            alert('Ingresar Inmuebles')
         }
     }
 }
