@@ -21,7 +21,7 @@
         <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
             <!-- FIND HOME AREA START -->
-                Componente Busqueda
+                Valor del id: {{ id }}.
             <!-- FIND HOME AREA END -->
             <!-- BLOG AREA START -->
             <div class="blog-area pt-115 pb-60">
@@ -29,7 +29,7 @@
                     <div class="row">
                         <div class="col-md-8 col-xs-12">
                             <div class="row">
-                                <div class="col-md-12" v-if="{id}">
+                                <div class="col-md-12" >
                                     <router-view></router-view>
                                 </div>                               
                                 <div>
@@ -41,8 +41,8 @@
                             <!-- widget-search -->
                             <aside class="widget widget-search mb-30">
                                 <form action="#">
-                                    <input type="text" name="search" placeholder="Search...">
-                                    <button type="button" class=""><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    <input type="text" name="search" placeholder="Buscar...">
+                                    <button type="button" class="" @click="search_post"><i class="fa fa-search" aria-hidden="true"></i></button>
                                 </form>
                             </aside>
                             <!-- widget-categories -->
@@ -119,20 +119,9 @@
                                     </div>
                                 </div>
                             </aside>
-                            <!-- widget-archive -->
-                            <aside class="widget widget-archive mb-50">
-                                <h5>Archive</h5>
-                                <ul class="widget-archive-list">
-                                    <li><a href="#">August <span>2016</span></a></li>
-                                    <li><a href="#">June <span>2016</span> </a></li>
-                                    <li><a href="#">May <span>2016</span> </a></li>
-                                    <li><a href="#">April <span>2016</span> </a></li>
-                                    <li><a href="#">March <span>2016</span> </a></li>
-                                </ul>   
-                            </aside>
                             <!-- widget-twitter -->
                             <aside class="widget widget-twitter mb-60">
-                                <h5>Latest Tweets</h5>
+                                <h5>Comentarios en las redes sociales</h5>
                                 <div class="single-twette">
                                     <div class="twitter-icon">
                                         <i class="fa fa-twitter" aria-hidden="true"></i>
@@ -195,10 +184,19 @@ export default {
         'list-item': posts
     },
     props:['id'],
+    data () {
+        return {
+            
+        }
+    },
     computed: {
         posts: () => store.state.posts,
         categories: () => store.state.categories
     },
-
+    methods: {
+        search_post() {
+            alert('Iniciando busqueda...')
+        }
+    }
 }
 </script>

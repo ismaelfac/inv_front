@@ -9,8 +9,7 @@
                     <div class="post-title-time">
                         <h5><a @click="select">{{ post.title}}</a></h5>
                         <p>{{ post.created_at }}</p>
-                    </div>
-                    <p style="text-align:justify"><b>{{ post.title}}</b> {{ post.description }} </p>
+                    </div><p style="text-align:justify" v-html="post.description"></p>
                     <a class="read-more" @click="select">Leer Mas...</a>
                 </div>  
             </div>
@@ -26,8 +25,8 @@
                             <h5><a href="#">{{ post.title}}</a></h5>
                             <p>{{ post.created_at }}</p>
                         </div>
-                        <p style="text-align:justify"><b>{{ post.title}}</b> {{ post.description }} </p>
-                        <a class="read-more" href="#!" @click="select">Leer Mas...</a>
+                        <p style="text-align:justify" v-html="post.description"></p>
+                        <a class="read-more" @click="select">Leer Mas...</a>
                     </div>
                 </article>
             </div>
