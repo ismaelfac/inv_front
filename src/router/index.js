@@ -17,6 +17,12 @@ import TaskDetails from '../components/Task/Details.vue'
 
 import Posts from '../views/website/blog.vue'
 import PostDetails from '../components/posts/post_details.vue'
+
+import ClassifiedList from '../components/classifieds/List.vue'
+import ClassifiedCreate from '../components/classifieds/Create.vue'
+import ClassifiedDetails from '../components/classifieds/Details.vue'
+import ClassifiedEdit from '../components/classifieds/Edit.vue'
+
 Vue.use(Router)
 
 const router = new Router({
@@ -101,6 +107,36 @@ const router = new Router({
 					component: PostDetails,
 					props: true
 				},
+			]
+		},
+		{
+			path: '/classifieds',
+			component: ClassifiedList,
+			children: [
+				{
+					path: '',
+					name: 'classifieds',
+					component: {
+						template: '<h2>Por favor selecciona una tarea</h2>'
+					}
+				},
+				{
+					path: 'create',
+					name: 'classifieds.create',
+					component: ClassifiedCreate
+				},
+				{
+					path: ':id',
+					name: 'classifieds.details',
+					component: ClassifiedDetails,
+					props: true
+				},
+				{
+					path: ':id/edit',
+					name: 'classifieds.edit',
+					component: ClassifiedEdit,
+					props: true
+				}
 			]
 		},
 		{

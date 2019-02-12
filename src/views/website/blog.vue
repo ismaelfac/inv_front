@@ -40,7 +40,8 @@
                         <div class="col-md-4 col-xs-12">
                             <!-- widget-search -->
                             <aside class="widget widget-search mb-30">
-                                <a href="" @click="get_classifieds" class="btn btn-danger btn-block">Quiero registrar un Inmueble</a>
+                                <router-link tag="a" :to="{ name: 'classifieds.create' }"class="btn btn-danger btn-block">Quiero registrar un Inmueble</router-link>
+                                
                             </aside>
                             <!-- widget-search -->
                             <aside class="widget widget-search mb-30">
