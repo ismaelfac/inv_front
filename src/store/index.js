@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import tasks from './tasks.js'
 import comments from './comments.js'
 import posts from './modules/posts.js'
+import categories from './modules/categories.js'
 
 Vue.use(Vuex)
 
@@ -10,7 +11,8 @@ export default new Vuex.Store({
     state: {
         tasks,
         comments,
-        posts
+        posts, 
+        categories
     },
     getters: {
         findTask(state) {

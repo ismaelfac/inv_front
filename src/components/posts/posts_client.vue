@@ -11,21 +11,21 @@
         <div class="row">
             <div class="blog-carousel">
                 <!-- blog-item -->
-                <list-item v-for="post in posts" :key="post.id" :post="post"></list-item>                
+                <list-item v-for="post in posts" :key="post.id" :post="post" :carousel="true"></list-item>                
             </div>
         </div>
     </div>
 </template>
 <script>
 import store from '../../store'
-import listItem from './ListItem.vue'
+import ListItem from './ListItem.vue'
 export default {
     name:'Posts',
-    components:{
-        'list-item':listItem
+    components: {
+        'list-item': ListItem
     },
     computed: {
         posts: () => store.state.posts
-    },
+    }
 }
 </script>

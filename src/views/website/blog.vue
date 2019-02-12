@@ -24,12 +24,19 @@
                 Componente Busqueda
             <!-- FIND HOME AREA END -->
             <!-- BLOG AREA START -->
-            <div class="blog-area pt-115 pb-120">
+            <div class="blog-area pt-115 pb-60">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-xs-12">
-                            
-                        </div>
+                            <div class="row">
+                            <template v-if="post">
+                                    <post-details :post="post"></post-details>
+                            </template>
+                            <template v-else>
+                                <list-item v-for="post in posts" :key="post.id" :post="post" :carousel="false"></list-item>
+                            </template>      
+                            </div>               
+                        </div>   
                         <div class="col-md-4 col-xs-12">
                             <!-- widget-search -->
                             <aside class="widget widget-search mb-30">
@@ -179,13 +186,28 @@
     </div>
 </template>
 <script>
+import store from '../../store'
 import blog from '../../components/blog/List.vue'
+import posts from '../../components/posts/ListItem.vue'
+import post_details from '../../components/posts/post_details.vue'
 import subscribe from '../../components/subscribe/subscribe.vue'
 export default {
     name: 'blog',
     components: {
         subscribe,
-        blog
-    }
+        blog,
+        'list-item': posts,
+        'post-details': post_details
+    },
+    data () {
+        return {
+            post: false
+        }
+    },
+    computed: {
+        posts: () => store.state.posts,
+        categories: () => store.state.categories
+    },
+
 }
 </script>
