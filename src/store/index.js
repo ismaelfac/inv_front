@@ -22,6 +22,13 @@ export default new Vuex.Store({
                 return task;    
             }
         },
+        findPost(state) {
+            return function (id){
+         		let post = state.posts.find(post => post.id == id)
+                not_found_unless(post);
+                return post;    
+            }
+        },
         findComments(state){
             return function (id){
                 let commment = state.comments.find(comment => comment.id == id)

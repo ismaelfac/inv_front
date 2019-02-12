@@ -49,11 +49,8 @@
                             <aside class="widget widget-categories mb-50">
                                 <h5>Categorias</h5>
                                 <ul class="widget-categories-list">
-                                    <li><a href="#">Apartment <span>1420</span></a></li>
-                                    <li><a href="#">Apartment Building <span>780</span></a></li>
-                                    <li><a href="#">Bungalow <span>670</span></a></li>
-                                    <li><a href="#">Corporate House <span>520</span></a></li>
-                                    <li><a href="#">Duplex Villa <span>350</span></a></li>
+                                    <li v-for="category in categories" :key="category.id" :category="category"><a href="#">{{ category.title}} <span>{{ category.post_total}}</span></a></li>
+                                  
                                 </ul>
                             </aside>
                             <!-- widget-recent-post -->

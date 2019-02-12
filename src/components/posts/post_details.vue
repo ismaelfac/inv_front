@@ -115,6 +115,11 @@ export default {
 	components:{
         'app-icon': Icon
    	},
-    props:['posts','post']
+    props:['id'],
+    computed: {
+        post() {
+            return store.getters.findPost(this.id)
+        }
+    },
 }
 </script>

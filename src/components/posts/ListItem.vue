@@ -26,17 +26,16 @@
                             <h5><a href="#">{{ post.title}}</a></h5>
                             <p>{{ post.created_at }}</p>
                         </div>
-                        <p style="text-align:justify"><b>{{ post.title}}</b> {{ post.description | capitalize | replaceHello }} </p>
-                        <a class="read-more" href="#">Leer Mas...</a>
+                        <p style="text-align:justify"><b>{{ post.title}}</b> {{ post.description }} </p>
+                        <a class="read-more" href="#!" @click="select">Leer Mas...</a>
                     </div>
                 </article>
             </div>
         </template>
-        
     </div>
-    
 </template>
 <script>
+import store from '../../store'
 export default {
     name:'Post-Item',
     props:['post', 'carousel'],
@@ -63,9 +62,19 @@ export default {
             return str.replace('mensaje de prueba', 'World!')
         }
     },
+    computed: {
+        isActive() {
+            return this.post.id == this.$route.params.id;
+        }
+    },
     methods: {
-        limitCaracters(){
+        select() {
+            alert('entro')
+            let route = this.isActive
+                ? {name: 'posts'}
+                : {name: 'posts.details', params: {id: this.post.id}};
 
+            this.$router.push(route);
         }
     },
 }
