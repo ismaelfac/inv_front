@@ -1,5 +1,6 @@
 <template>
     <div>
+        <div v-if="!current_user">
         <!-- SLIDER SECTION START -->
     <div class="slider-1 pos-relative slider-overlay">
         <div class="bend niceties preview-1">
@@ -49,51 +50,62 @@
     <!-- Start page content -->
     <section id="page-content" class="page-wrapper">
             
-        <!-- FEATURED FLAT AREA START -->
-            <div class="featured-flat-area pt-115 pb-80">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="section-title-2 text-center">
-                                <h2>Propiedades Destacadas</h2>
-                             </div>
-                        </div>
-                    </div>
-                    <div class="featured-flat">
+                <!-- FEATURED FLAT AREA START -->
+                <div class="featured-flat-area pt-115 pb-80">
+                    <div class="container">
                         <div class="row">
-                            <!-- flat-item -->
-                            <properties-app></properties-app>
+                            <div class="col-md-12">
+                                <div class="section-title-2 text-center">
+                                    <h2>Propiedades Destacadas</h2>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="featured-flat">
+                            <div class="row">
+                                <!-- flat-item -->
+                                <properties-app></properties-app>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        <!-- FEATURED FLAT AREA END -->
+                <!-- FEATURED FLAT AREA END -->
 
-            <!-- BLOG AREA START -->
-            <div class="blog-area pb-60">
-                <posts></posts>
-            </div>
-            <!-- BLOG AREA END -->
+                <!-- BLOG AREA START -->
+                <div class="blog-area pb-60">
+                    <posts></posts>
+                </div>
+                <!-- BLOG AREA END -->
 
-            <!-- BRAND AREA START -->
-            brands
-            <!-- BRAND AREA END -->
-            
-            <!-- SUBSCRIBE AREA START -->
-             SUBSCRIBE
-            <!-- SUBSCRIBE AREA END -->
+                <!-- BRAND AREA START -->
+                brands
+                <!-- BRAND AREA END -->
+                
+                <!-- SUBSCRIBE AREA START -->
+                 SUBSCRIBE
+                <!-- SUBSCRIBE AREA END -->
     </section>
     <!-- End page content -->
+    </div>
+        <div v-else>
+            <panel-client></panel-client>
+        </div>
     </div>
 </template>
 <script>
 import Posts from '../components/posts/posts_client.vue'
 import Propiedades from '../components/properties_client/properties.vue'
+import PanelClient from '../components/PanelClient/PanelClient.vue'
 export default {
     name:'Content',
+    data () {
+        return {
+            current_user: true
+        }
+    },
     components: {
         'posts': Posts,
-        'properties-app': Propiedades
+        'properties-app': Propiedades,
+        'panel-client': PanelClient
     }
 }
 </script>
