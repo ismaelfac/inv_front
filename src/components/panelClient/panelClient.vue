@@ -48,6 +48,12 @@
                                 </div>
                               </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="" class="btn btn-primary">Vincular un Inmueble</a>
+                                <a href="" class="btn btn-primary">Crear mi Clasificado</a>
+                            </div>
+                        </div>
                     </div>
                     <!-- ABOUT SHELTEK AREA START -->
                     <div class="about-sheltek-area ptb-115">
@@ -57,13 +63,19 @@
                                     <div class="section-title mb-30">
                                         <h3>MIS PUBLICACIONES </h3>
                                     </div>
-                                    COMPONENTE
+                                    
                                 </div>
                                 <div class="col-sm-6 col-sm-pull-6 col-xs-12">
                                         <div class="section-title mb-30">
                                         <h3>BANDEJA DE ENTRADA </h3>
                                     </div>
-                                    COMPONENTE
+                                     <div class="pro-details-feedback">
+                                        <div class="media">
+                                        <div class="media-body">
+                                            <li class="list-item" v-for="inbox in client.inbox">{{ inbox.message }}</li>
+                                        </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
