@@ -2,12 +2,12 @@
     <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="flat-item">
             <div class="flat-item-image">
-                <span v-if="property.for_sale" class="for-sale">Venta</span>
-                <span v-if="property.for_rent" class="for-sale">Arriendo</span>
-                <span v-if="property.for_transfer" class="for-sale">Arriendo/Venta</span>
-                <a href="#!" @click.prevent="details_property"><img src="/src/assets/website/images/flat/1.jpg" alt=""></a>
+                <span v-if="property.for_sale == 'true'" class="for-sale">Venta</span>
+                <span v-if="property.for_rent == 'true'" class="for-sale">Arriendo</span>
+                <span v-if="property.for_transfer == 'true'" class="for-sale">Arriendo/Venta</span>
+                <router-link tag="a" :to="{ name: 'tasks.details' }"><img :src="property.main_image.url" alt=""></router-link>
                 <div class="flat-link">
-                    <a href="#!" @click.prevent="details_property">Ver Detalles</a>
+                    <router-link tag="a" :to="{ name: 'tasks.details' }">Ver Detalles</router-link>
                 </div>
                 <ul class="flat-desc">
                     <li>
@@ -30,12 +30,12 @@
             </div>
             <div class="flat-item-info">
                 <div class="flat-title-price">
-                    <h5><a href="#!" @click.prevent="details_property">{{ property.title }} </a></h5>
-                    <span v-if="property.for_sale" class="price">{{ property.sale_price_label}}</span>
-                    <span v-if="property.for_rent" class="price">{{ property.rent_price_label}}</span>
-                    <span v-if="property.for_transfer" class="price">{{ property.rent_price_label}} / {{ property.sale_price_label}}</span>
+                    <h5><a href="#!" @click.prevent="details_property">{{ property.title | capitalizeAll }} </a></h5>
+                    <span v-if="property.for_sale == 'true'" class="price">{{ property.sale_price_label}}</span>
+                    <span v-if="property.for_rent == 'true'" class="price">{{ property.rent_price_label}}</span>
+                    <span v-if="property.for_transfer == 'true'" class="price">{{ property.rent_price_label }} / {{ property.sale_price_label }}</span>
                 </div>
-                <p><img src="/src/assets/website/images/icons/location.png" alt="">{{ property.address }}</p>
+                <p><img src="/src/assets/website/images/icons/location.png" alt="">{{ property.address | capitalizeAll }}</p>
             </div>
         </div>
     </div>
@@ -44,6 +44,23 @@
 export default {
     name:'Item-property',
     props:['property'],
+    filters: {
+       uppercase: function (str) {
+            return str.toUpperCase()
+        },
+        lowercase: function (str) {
+            return str.toLowerCase()
+        },
+        capitalize: function (str) {
+            str = str.toLowerCase()
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        },
+        capitalizeAll: function (str) {
+            return str.replace(/\w\S*/g, function(str) { 
+                return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase()
+            })
+        }
+    },
     methods:{
         details_property(){
             this.$router.push('/properties/'+this.property.id_property);
@@ -51,3 +68,8 @@ export default {
     }
 }
 </script>
+<style lang="scss">
+    .price {
+        font-size: 18px;
+    }
+</style>

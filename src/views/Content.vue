@@ -62,7 +62,7 @@
                     <div class="featured-flat">
                         <div class="row">
                             <!-- flat-item -->
-                            Propiedades
+                            <properties-app></properties-app>
                         </div>
                     </div>
                 </div>
@@ -88,15 +88,12 @@
 </template>
 <script>
 import Posts from '../components/posts/posts_client.vue'
+import Propiedades from '../components/properties_client/properties.vue'
 export default {
     name:'Content',
-    components:{
-    'posts': Posts
-    },
-    data() {
-        return{
-
-        }
+    components: {
+        'posts': Posts,
+        'properties-app': Propiedades
     }
 }
 </script>
