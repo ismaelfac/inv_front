@@ -25,6 +25,11 @@ import ClassifiedEdit from '../components/classifieds/Edit.vue'
 import Properties from '../views/website/properties.vue'
 import PropertiesDetails from '../components/properties_client/Details.vue'
 
+import CommentList from '../components/comments/List.vue'
+import CommentEdit from '../components/comments/Edit.vue'
+import CommentCreate from '../components/comments/Create.vue'
+import CommentDetails from '../components/comments/Details.vue'
+
 Vue.use(Router)
 
 const router = new Router({
@@ -57,6 +62,7 @@ const router = new Router({
 			name: 'contact',
             component: Contact
         },
+        // properties
         {
 			path: '/properties',
 			component: Properties,
@@ -75,6 +81,7 @@ const router = new Router({
 				},
 			]
 		},
+		// tasks
         {
 			path: '/tasks',
 			component: TaskList,
@@ -105,6 +112,38 @@ const router = new Router({
 				}
 			]
 		},
+		//comments
+		{
+			path: '/comments',
+			component: CommentList,
+			children: [
+				{
+					path: '',
+					name: 'comments',
+					component: {
+						template: '<h2>Por favor selecciona un comentario</h2>'
+					}
+				},
+				{
+					path: 'create',
+					name: 'comments.create',
+					component: CommentCreate
+				},
+				{
+					path: ':id',
+					name: 'comments.details',
+					component: CommentDetails,
+					props: true
+				},
+				{
+					path: ':id/edit',
+					name: 'comments.edit',
+					component: CommentEdit,
+					props: true
+				}
+			]
+		},
+		// posts
 		{
 			path: '/posts',
 			component: Posts,
@@ -123,6 +162,7 @@ const router = new Router({
 				},
 			]
 		},
+		// Classifieds
 		{
 			path: '/classifieds',
 			component: ClassifiedList,

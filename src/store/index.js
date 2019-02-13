@@ -62,6 +62,9 @@ export default new Vuex.Store({
         toggleTask(state, task) {
             task.pending = !task.pending;
         },
+        toggleComment(state, comment) {
+            comment.pending = !comment.pending;
+        },
         updateTask(state, {id, draft}){
             let index = state.tasks.findIndex(task => task.id == id);
             state.tasks.splice(index, 1, draft)
@@ -72,6 +75,9 @@ export default new Vuex.Store({
         },
         deleteCompletedTasks(state) {
             state.tasks = state.tasks.filter(task => task.pending);
+        },
+         deleteCompletedComment(state) {
+            state.comments = state.comments.filter(comment => comment.pending);
         }
     },
     actions: {
@@ -93,11 +99,17 @@ export default new Vuex.Store({
         toggleTask(context, task){
             context.commit('toggleTask', task)
         },
+        toggleComment(context, task){
+            context.commit('toggleComment', task)
+        },
         deleteTask(context, id){
             context.commit('deleteTask', id)
         },
         deleteCompletedTasks(context){
             context.commit('deleteCompletedTasks')
+        },
+        deleteCompletedComments(context){
+            context.commit('deleteCompletedComment')
         }
     }
 })

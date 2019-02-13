@@ -1,39 +1,43 @@
 <template>
-    <li @click="select" class="list-group-item task-list-item"
-        :class="{active: isActive, completed: !task.pending}">
+    <li @click="select" class="list-group-item comment-list-item"
+        :class="{active: isActive, completed: !comment.pending}">
         <a @click.stop="toggleStatus">
-            <app-icon :img="task.pending ? 'unchecked' : 'check'"></app-icon>
+            <app-icon :img="comment.pending ? 'unchecked' : 'check'"></app-icon>
         </a>
 
-        <span class="description">{{ task.title }}</span>
+        <span class="description">{{ comment.title }}</span>
     </li>
 </template>
 
 <script>
 import store from '../../store';
+import Icon from '../../views/Icon.vue'
 
 export default {
+    components: {
+        'app-icon': Icon
+    },
     data() {
         return {
             draft: ''
         };
     },
-    props: ['task'],
+    props: ['comment'],
     computed: {
         isActive() {
-            return this.task.id == this.$route.params.id;
+            return this.comment.id == this.$route.params.id;
         }
     },
     methods: {
         select() {
             let route = this.isActive
-                ? {name: 'tasks'}
-                : {name: 'tasks.details', params: {id: this.task.id}};
+                ? {name: 'comments'}
+                : {name: 'comments.details', params: {id: this.comment.id}};
 
             this.$router.push(route);
         },
         toggleStatus() {
-            store.dispatch('toggleTask',this.task);
+            store.dispatch('toggleComment',this.comment);
         }
     }
 }
@@ -41,7 +45,7 @@ export default {
 
 <<<<<<< HEAD
 <style lang="scss">
-    .list-group-item.task-list-item {
+    .list-group-item.comment-list-item {
         display: flex;
         justify-content: space-between;
 

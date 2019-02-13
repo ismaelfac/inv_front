@@ -2,12 +2,12 @@
 	<div class="row">
         <div class="col-xs-6 col-md-6">
             <div class="top">
-                <h2>Tareas</h2>
-                <router-link :to="{ name: 'tasks.create' }">Nueva tarea</router-link>
+                <h2>Comentarios del Inmueble {{ property}}</h2>
+                <router-link :to="{ name: 'comments.create' }">Nuevo Comentario</router-link>
             </div>
 
-            <ul class="list-group tasks-list">
-                <task-item v-for="(task) in tasks" :key="task.id" :task="task"></task-item>
+            <ul class="list-group comments-list">
+                <comment-item v-for="(comment) in comments" :key="comment.id" :comment="comment"></comment-item>
             </ul>
 
             <p><a @click="deleteCompleted">Eliminar tareas completadas</a></p>            
@@ -20,18 +20,19 @@
 
 <script>
 import store from '../../store'
-import TaskItem from './ListItem.vue'
+import commentItem from './ListItem.vue'
+
 
 export default {
     computed: {
-        tasks: () => store.state.tasks
+        comments: () => store.state.comments
     },
     components: {
-        'task-item': TaskItem
+        'comment-item': commentItem
     },
     methods: {
         deleteCompleted() {
-            store.dispatch('deleteCompletedTasks');
+            store.dispatch('deleteCompletedComment');
         }
     }
 }
@@ -45,7 +46,7 @@ export default {
         justify-content: space-between;
     }
 
-    .tasks-list {
+    .comments-list {
         margin-bottom: 40px;
     }
 </style>

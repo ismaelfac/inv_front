@@ -8,38 +8,34 @@
                         <div class="pro-details-image mb-60">
                             <item-image :images="property.galleries"></item-image>     
                         </div>
-                         <!-- Nav tabs -->
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#details" aria-controls="details" role="tab" data-toggle="tab">Detalles</a></li>
-                            <li role="presentation"><a href="#characteristics" aria-controls="characteristics" role="tab" data-toggle="tab">Caracteristicas</a></li>
-                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Comentarios</a></li>
-                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-                            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="details">
-                                <div class="container">
-                                    <h6>{{ property.address }}</h6>
-                                    <ul class="list-group">
-                                        <li v-for="item in property.galleries">{{ item.url }} </li>
-                                    </ul>
+                        <div class="pro-details-image mb-60">
+                            <div class="col-md-12">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#details" aria-controls="details" role="tab" data-toggle="tab">Detalles</a></li>
+                                    <li role="presentation"><a href="#characteristics" aria-controls="characteristics" role="tab" data-toggle="tab">Caracteristicas</a></li>
+                                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Comentarios</a></li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="details">
+                                        <div class="container">
+                                            <frm-property :property="property"></frm-property>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="characteristics">
+                                        <div class="container">
+                                            <characteristics :conditions="conditions" :amenities="amenities" :current_user="current_user"></characteristics>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="profile">
+                                        <div class="container">
+                                            <comments :comments="comments" :current_user="current_user"></comments>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="characteristics">
-                                <div class="container">
-                                    <characteristics :conditions="conditions" :amenities="amenities" :current_user="current_user"></characteristics>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="profile">
-                                <div class="container">
-                                    <comments :comments="comments" :current_user="current_user"></comments>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="messages">3</div>
-                            <div role="tabpanel" class="tab-pane" id="settings">4</div>
                         </div>
-
                     </div>
                     <div class="col-md-4">
                         <!-- widget-search-property -->
@@ -266,13 +262,15 @@ import store from '../../store'
 import comments from '../comments/List.vue'
 import characteristics from '../characteristics/characteristics.vue'
 import ItemImages from './ItemImages.vue'
+import DetailItem from './DetailItem.vue'
 export default {
     name: 'details_property',
     props: ['id'],
     components:{
         comments,
         characteristics,
-        'item-image': ItemImages
+        'item-image': ItemImages,
+        'frm-property': DetailItem
     },
     computed: {
         property() {

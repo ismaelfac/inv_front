@@ -20,9 +20,12 @@
 
 <script>
 	import store from '../../store';
-
+	import Icon from '../../views/Icon.vue'
 	export default {
 		props: ['id'],
+		components: {
+        	'app-icon': Icon
+    	},
 		computed: {
 			task() {
 				return store.getters.findTask(this.id)
