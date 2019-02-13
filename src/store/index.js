@@ -108,7 +108,7 @@ export default new Vuex.Store({
         deleteCompletedTasks(context){
             context.commit('deleteCompletedTasks')
         },
-        deleteCompletedComments(context){
+        deleteCompletedComment(context){
             context.commit('deleteCompletedComment')
         }
     }

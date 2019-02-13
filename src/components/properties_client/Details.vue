@@ -30,7 +30,7 @@
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="profile">
                                         <div class="container">
-                                            <comments :comments="comments" :current_user="current_user"></comments>
+                                            <comments :comments="comments" :current_user="current_user" :property="property.title"></comments>
                                         </div>
                                     </div>
                                 </div>

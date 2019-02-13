@@ -1,18 +1,19 @@
 <template>
 	<div class="row">
-        <div class="col-xs-6 col-md-6">
-            <div class="top">
-                <h2>Comentarios del Inmueble {{ property}}</h2>
-                <router-link :to="{ name: 'comments.create' }">Nuevo Comentario</router-link>
+        <div class="col-xs-12 col-md-6">
+            <div class="top mt-40">
+                <h2>{{ property }}</h2>
+                
+                <router-link :to="{ name: 'comments.create' }" class="submit-btn-1">Nuevo Comentario</router-link>
             </div>
-
+            <h6>Comentarios del Inmueble</h6>
             <ul class="list-group comments-list">
                 <comment-item v-for="(comment) in comments" :key="comment.id" :comment="comment"></comment-item>
             </ul>
 
             <p><a @click="deleteCompleted">Eliminar tareas completadas</a></p>            
         </div>
-        <div class="col-xs-6 col-md-6">
+        <div class="col-xs-12 col-md-6">
             <router-view></router-view>
         </div>
 	</div>
@@ -24,6 +25,7 @@ import commentItem from './ListItem.vue'
 
 
 export default {
+    props:['property'],
     computed: {
         comments: () => store.state.comments
     },
