@@ -8,9 +8,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="blog-details-title-time">
-                                <div class="pull-right pr-50"><a href="" class="btn btn-success">Confirmar telefono</a></div>
-                                <h5>Notificaciones</h5>
-                                <p>Esto es una prueba</p>
+                                <h5>Notificaciones <div class="pull-right pr-50"><a href="" class="btn btn-danger">Reportar Anomalia</a></div></h5>
+                                <p><div class="alert" :class="client.alert_client" role="alert"><a href="#">{{ client.message }}</a></div></p>
                             </div>
                         </div>
                     </div>
@@ -19,32 +18,32 @@
                             <div class="col-sm-6 col-md-3">
                                 <div class="thumbnail">
                                   <div class="caption">
-                                    <p class="query_text">0</p>
-                                    <a href="#"><h4 style="text-align:center">Requerimientos compatibles</h4></a>
+                                    <p class="query_text">{{ client.compatible_requirements }}</p>
+                                    <router-link tag="li" :to="{name: 'content'}"><a><h4 style="text-align:center">Requerimientos compatibles</h4></a></router-link>
                                   </div>
                                 </div>
                               </div>
                               <div class="col-sm-6 col-md-3">
                                 <div class="thumbnail">
                                   <div class="caption">
-                                    <p class="query_text">0</p>
-                                    <a href="#"><h4 style="text-align:center">Propiedades compatibles</h4></a>
+                                    <p class="query_text">{{ client.compatible_properties }}</p>
+                                    <router-link tag="li" :to="{name: 'content'}"><a><h4 style="text-align:center">Propiedades compatibles</h4></a></router-link>
                                   </div>
                                 </div>
                               </div>
                               <div class="col-sm-6 col-md-3">
                                 <div class="thumbnail">
                                   <div class="caption">
-                                    <p class="query_text">0</p>
-                                    <a href="#"><h4 style="text-align:center">Mis Requerimientos</h4></a>
+                                    <p class="query_text">{{ client.requirements }}</p>
+                                    <router-link tag="li" :to="{name: 'content'}"><a><h4 style="text-align:center">Mis Requerimientos</h4></a></router-link>
                                   </div>
                                 </div>
                               </div>
                               <div class="col-sm-6 col-md-3">
                                 <div class="thumbnail">
                                   <div class="caption">
-                                    <p class="query_text">0</p>
-                                    <a href="#"><h4 style="text-align:center">Mis Propiedades</h4></a>
+                                    <p class="query_text">{{ client.related_properties }}</p>
+                                    <router-link tag="li" :to="{name: 'content'}"><a><h4 style="text-align:center">Mis Propiedades</h4></a></router-link>
                                   </div>
                                 </div>
                               </div>
@@ -73,26 +72,16 @@
                 </div>
             </div>
         <!-- FEATURED FLAT AREA END -->
-
-            <!-- BLOG AREA START -->
-            <div class="blog-area pb-60">
-                <posts></posts>
-            </div>
-            <!-- BLOG AREA END -->
-
-            <!-- BRAND AREA START -->
-            brands
-            <!-- BRAND AREA END -->
-            
-            <!-- SUBSCRIBE AREA START -->
-             SUBSCRIBE
-            <!-- SUBSCRIBE AREA END -->
     </section>
     <!-- End page content -->
 </template>
 <script>
+import store from '../../store'
     export default {
-
+        name: 'panelClient',
+        computed: {
+            client: () => store.state.client
+        }
     }
 </script>
 <style lang="scss">

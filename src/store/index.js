@@ -6,6 +6,7 @@ import posts from './modules/posts.js'
 import categories from './modules/categories.js'
 import classifieds from './modules/classifields.js'
 import properties from './modules/properties.js'
+import client from './modules/clients.js'
 
 Vue.use(Vuex)
 
@@ -16,7 +17,8 @@ export default new Vuex.Store({
         posts, 
         categories,
         classifieds,
-        properties
+        properties,
+        client
     },
     getters: {
         findTask(state) {
