@@ -66,7 +66,7 @@
 </template>
 
 <script>
-	import store from '../../store';
+	import store from '../../store'
 	import Icon from '../../views/Icon.vue'
 	export default {
 		components:{

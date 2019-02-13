@@ -1,76 +1,32 @@
 <template>
     <!-- PROPERTIES DETAILS AREA START -->
-        <div class="properties-details-area pt-115 pb-60">
+        <div class="properties-details-area pb-60">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
                         <!-- pro-details-image -->
                         <div class="pro-details-image mb-60">
-                            <div class="pro-details-big-image">
-                                <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane fade in active" id="pro-1">
-                                        <a href="/website/images/single-property/big/1.jpg" data-lightbox="image-1" data-title="Sheltek Properties - 1">
-                                            <img src="/website/images/single-property/big/1.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="pro-2">
-                                        <a href="/website/images/single-property/big/2.jpg" data-lightbox="image-1" data-title="Sheltek Properties - 2">
-                                            <img src="/website/images/single-property/big/2.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="pro-3">
-                                        <a href="/website/images/single-property/big/3.jpg" data-lightbox="image-1" data-title="Sheltek Properties - 3">
-                                            <img src="/website/images/single-property/big/3.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="pro-4">
-                                        <a href="/website/images/single-property/big/1.jpg" data-lightbox="image-1" data-title="Sheltek Properties - 4">
-                                            <img src="/website/images/single-property/big/1.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="pro-5">
-                                        <a href="/website/images/single-property/big/2.jpg" data-lightbox="image-1" data-title="Sheltek Properties - 5">
-                                            <img src="/website/images/single-property/big/2.jpg" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pro-details-carousel">
-                                <div class="pro-details-item">
-                                    <a href="#pro-1" data-toggle="tab"><img src="/website/images/single-property/small/1.jpg" alt=""></a>
-                                </div>
-                                <div class="pro-details-item">
-                                    <a href="#pro-2" data-toggle="tab">
-                                        <img src="/website/images/single-property/small/2.jpg" alt="">                
-                                    </a>
-                                </div>
-                                <div class="pro-details-item">
-                                    <a href="#pro-3" data-toggle="tab">
-                                        <img src="/website/images/single-property/small/3.jpg" alt="">                
-                                    </a>
-                                </div>
-                                <div class="pro-details-item">
-                                    <a href="#pro-4" data-toggle="tab">
-                                        <img src="/website/images/single-property/small/4.jpg" alt="">                
-                                    </a>
-                                </div>
-                                <div class="pro-details-item">
-                                    <a href="#pro-5" data-toggle="tab">
-                                        <img src="/website/images/single-property/small/1.jpg" alt="">                
-                                    </a>
-                                </div>
-                            </div>                           
+                            <item-image :images="property.galleries"></item-image>     
                         </div>
                          <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#characteristics" aria-controls="characteristics" role="tab" data-toggle="tab">Caracteristicas</a></li>
+                            <li role="presentation" class="active"><a href="#details" aria-controls="details" role="tab" data-toggle="tab">Detalles</a></li>
+                            <li role="presentation"><a href="#characteristics" aria-controls="characteristics" role="tab" data-toggle="tab">Caracteristicas</a></li>
                             <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Comentarios</a></li>
                             <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
                             <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="characteristics">
+                            <div role="tabpanel" class="tab-pane active" id="details">
+                                <div class="container">
+                                    <h6>{{ property.address }}</h6>
+                                    <ul class="list-group">
+                                        <li v-for="item in property.galleries">{{ item.url }} </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="characteristics">
                                 <div class="container">
                                     <characteristics :conditions="conditions" :amenities="amenities" :current_user="current_user"></characteristics>
                                 </div>
@@ -198,21 +154,21 @@
                                     <div class="flat-item">
                                         <div class="flat-item-image">
                                             <span class="for-sale">For Sale</span>
-                                            <a href="#"><img src="/website/images/flat/1.jpg" alt=""></a>
+                                            <a href="#"><img src="/src/assets/website/images/flat/1.jpg" alt=""></a>
                                             <div class="flat-link">
                                                 <a href="#">More Details</a>
                                             </div>
                                             <ul class="flat-desc">
                                                 <li>
-                                                    <img src="/website/images/icons/4.png" alt="">
+                                                    <img src="/src/assets/website/images/icons/4.png" alt="">
                                                     <span>450 sqft</span>
                                                 </li>
                                                 <li>
-                                                    <img src="/website/images/icons/5.png" alt="">
+                                                    <img src="/src/assets/website/images/icons/5.png" alt="">
                                                     <span>5</span>
                                                 </li>
                                                 <li>
-                                                    <img src="/website/images/icons/6.png" alt="">
+                                                    <img src="/src/assets/website/images/icons/6.png" alt="">
                                                     <span>3</span>
                                                 </li>
                                             </ul>
@@ -222,7 +178,7 @@
                                                 <h5><a href="#">Masons de Villa </a></h5>
                                                 <span class="price">$52,350</span>
                                             </div>
-                                            <p><img src="/website/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
+                                            <p><img src="/src/assets/website/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
                                         </div>
                                     </div>
                                 </div>
@@ -231,21 +187,21 @@
                                     <div class="flat-item">
                                         <div class="flat-item-image">
                                             <span class="for-sale">For Sale</span>
-                                            <a href="#"><img src="/website/images/flat/2.jpg" alt=""></a>
+                                            <a href="#"><img src="/src/assets/website/images/flat/2.jpg" alt=""></a>
                                             <div class="flat-link">
                                                 <a href="#">More Details</a>
                                             </div>
                                             <ul class="flat-desc">
                                                 <li>
-                                                    <img src="/website/images/icons/4.png" alt="">
+                                                    <img src="/src/assets/website/images/icons/4.png" alt="">
                                                     <span>450 sqft</span>
                                                 </li>
                                                 <li>
-                                                    <img src="/website/images/icons/5.png" alt="">
+                                                    <img src="/src/assets/website/images/icons/5.png" alt="">
                                                     <span>5</span>
                                                 </li>
                                                 <li>
-                                                    <img src="/website/images/icons/6.png" alt="">
+                                                    <img src="/src/assets/website/images/icons/6.png" alt="">
                                                     <span>3</span>
                                                 </li>
                                             </ul>
@@ -255,7 +211,7 @@
                                                 <h5><a href="#">Masons de Villa </a></h5>
                                                 <span class="price">$52,350</span>
                                             </div>
-                                            <p><img src="/website/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
+                                            <p><img src="/src/assets/website/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
                                         </div>
                                     </div>
                                 </div>
@@ -264,21 +220,21 @@
                                     <div class="flat-item">
                                         <div class="flat-item-image">
                                             <span class="for-sale">For Sale</span>
-                                            <a href="#"><img src="/website/images/flat/3.jpg" alt=""></a>
+                                            <a href="#"><img src="/src/assets/website/images/flat/3.jpg" alt=""></a>
                                             <div class="flat-link">
                                                 <a href="#">More Details</a>
                                             </div>
                                             <ul class="flat-desc">
                                                 <li>
-                                                    <img src="/website/images/icons/4.png" alt="">
+                                                    <img src="/src/assets/website/images/icons/4.png" alt="">
                                                     <span>450 sqft</span>
                                                 </li>
                                                 <li>
-                                                    <img src="/website/images/icons/5.png" alt="">
+                                                    <img src="/src/assets/website/images/icons/5.png" alt="">
                                                     <span>5</span>
                                                 </li>
                                                 <li>
-                                                    <img src="/website/images/icons/6.png" alt="">
+                                                    <img src="/src/assets/website/images/icons/6.png" alt="">
                                                     <span>3</span>
                                                 </li>
                                             </ul>
@@ -288,7 +244,7 @@
                                                 <h5><a href="#">Masons de Villa </a></h5>
                                                 <span class="price">$52,350</span>
                                             </div>
-                                            <p><img src="/website/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
+                                            <p><img src="/src/assets/website/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
                                         </div>
                                     </div>
                                 </div>
@@ -306,17 +262,22 @@
     <!-- PROPERTIES DETAILS AREA END -->
 </template>
 <script>
+import store from '../../store'
 import comments from '../comments/List.vue'
 import characteristics from '../characteristics/characteristics.vue'
+import ItemImages from './ItemImages.vue'
 export default {
     name: 'details_property',
     props: ['id'],
     components:{
         comments,
-        characteristics
+        characteristics,
+        'item-image': ItemImages
     },
-    computed:{
-        
+    computed: {
+        property() {
+            return store.getters.findProperties(this.id)
+        }
     },
     data() {
         return {

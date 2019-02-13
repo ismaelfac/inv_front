@@ -7,7 +7,6 @@ import Content from '../views/Content.vue'
 import About from '../views/website/about.vue'
 import Brands from '../views/website/brands.vue'
 import Contact from '../views/website/contact.vue'
-import Properties from '../views/website/properties.vue'
 import Blog from '../views/website/blog.vue'
 //
 import TaskList from '../components/Task/List.vue'
@@ -22,6 +21,9 @@ import ClassifiedList from '../components/classifieds/List.vue'
 import ClassifiedCreate from '../components/classifieds/Create.vue'
 import ClassifiedDetails from '../components/classifieds/Details.vue'
 import ClassifiedEdit from '../components/classifieds/Edit.vue'
+
+import Properties from '../views/website/properties.vue'
+import PropertiesDetails from '../components/properties_client/Details.vue'
 
 Vue.use(Router)
 
@@ -57,10 +59,22 @@ const router = new Router({
         },
         {
 			path: '/properties',
-			name: 'properties',
-            component: Properties,
-            props: true
-        },
+			component: Properties,
+			children: [
+				{
+					path: '',
+					name: 'properties',
+					component: Properties
+				},
+				
+				{
+					path: ':id',
+					name: 'properties.details',
+					component: PropertiesDetails,
+					props: true
+				},
+			]
+		},
         {
 			path: '/tasks',
 			component: TaskList,

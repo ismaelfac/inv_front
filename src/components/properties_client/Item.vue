@@ -5,9 +5,9 @@
                 <span v-if="property.for_sale == 'true'" class="for-sale">Venta</span>
                 <span v-if="property.for_rent == 'true'" class="for-sale">Arriendo</span>
                 <span v-if="property.for_transfer == 'true'" class="for-sale">Arriendo/Venta</span>
-                <router-link tag="a" :to="{ name: 'tasks.details' }"><img :src="property.main_image.url" alt=""></router-link>
+                <a href="#!"  @click="select"><img :src="property.main_image.url" alt=""></a>
                 <div class="flat-link">
-                    <router-link tag="a" :to="{ name: 'tasks.details' }">Ver Detalles</router-link>
+                    <a href="#!"  @click="select">Ver Detalles</a>
                 </div>
                 <ul class="flat-desc">
                     <li>
@@ -64,6 +64,11 @@ export default {
     methods:{
         details_property(){
             this.$router.push('/properties/'+this.property.id_property);
+        },
+        select() {
+            let route = { name: 'properties.details', params: {id: this.property.id}};
+            console.log(route);
+            this.$router.push(route);
         }
     }
 }

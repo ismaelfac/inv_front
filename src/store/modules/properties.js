@@ -76,72 +76,72 @@ let properties = [
             "position": "1"
         },
         "galleries": [
-            {
-                "0": {
+                {
                     "id": 29558978,
                     "url": "https://images.wasi.co/inmuebles/b15905120181029122950.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905120181029122950.jpg",
                     "description": "",
                     "position": "1"
                 },
-                "1": {
+                {
                     "id": 29558979,
                     "url": "https://images.wasi.co/inmuebles/b15905220181029122955.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905220181029122955.jpg",
                     "description": "",
                     "position": "2"
                 },
-                "2": {
+                {
                     "id": 29558980,
                     "url": "https://images.wasi.co/inmuebles/b15905320181029122958.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905320181029122958.jpg",
                     "description": "",
                     "position": "3"
                 },
-                "3": {
+                {
                     "id": 29558981,
                     "url": "https://images.wasi.co/inmuebles/b15905420181029123000.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905420181029123000.jpg",
                     "description": "",
                     "position": "4"
                 },
-                "4": {
+                {
                     "id": 29558982,
                     "url": "https://images.wasi.co/inmuebles/b15905520181029123003.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905520181029123003.jpg",
                     "description": "",
                     "position": "5"
                 },
-                "5": {
+                {
                     "id": 29558983,
                     "url": "https://images.wasi.co/inmuebles/b15905620181029123005.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905620181029123005.jpg",
                     "description": "",
                     "position": "6"
                 },
-                "6": {
+                {
                     "id": 29558984,
                     "url": "https://images.wasi.co/inmuebles/b15905720181029123007.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905720181029123007.jpg",
                     "description": "",
                     "position": "7"
                 },
-                "7": {
+                {
                     "id": 29558985,
                     "url": "https://images.wasi.co/inmuebles/b15905820181029123010.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905820181029123010.jpg",
                     "description": "",
                     "position": "8"
                 },
-                "8": {
+                {
                     "id": 29558986,
                     "url": "https://images.wasi.co/inmuebles/b15905920181029123013.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905920181029123013.jpg",
                     "description": "",
                     "position": "9"
                 },
-                "id": 730529
-            }
+                {
+                    "id": 730529
+                }
         ],
         "features": {
             "internal": [],
@@ -236,58 +236,58 @@ let properties = [
             "position": "1"
         },
         "galleries": [
-            {
-                "0": {
+                {
                     "id": 23000579,
                     "url": "https://images.wasi.co/inmuebles/b15905120180608050319.png",
                     "url_big": "https://images.wasi.co/inmuebles/g15905120180608050319.png",
                     "description": "",
                     "position": "1"
                 },
-                "1": {
+                {
                     "id": 23000580,
                     "url": "https://images.wasi.co/inmuebles/b15905220180608050333.png",
                     "url_big": "https://images.wasi.co/inmuebles/g15905220180608050333.png",
                     "description": "",
                     "position": "2"
                 },
-                "2": {
+                {
                     "id": 23000581,
                     "url": "https://images.wasi.co/inmuebles/b15905320180608050355.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905320180608050355.jpg",
                     "description": "",
                     "position": "3"
                 },
-                "3": {
+                {
                     "id": 23000582,
                     "url": "https://images.wasi.co/inmuebles/b15905420180608050355.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905420180608050355.jpg",
                     "description": "",
                     "position": "4"
                 },
-                "4": {
+                {
                     "id": 23000583,
                     "url": "https://images.wasi.co/inmuebles/b15905520180608050356.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905520180608050356.jpg",
                     "description": "",
                     "position": "5"
                 },
-                "5": {
+                {
                     "id": 23000584,
                     "url": "https://images.wasi.co/inmuebles/b15905620180608050356.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905620180608050356.jpg",
                     "description": "",
                     "position": "6"
                 },
-                "6": {
+                {
                     "id": 23000585,
                     "url": "https://images.wasi.co/inmuebles/b15905720180608050356.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905720180608050356.jpg",
                     "description": "",
                     "position": "7"
                 },
-                "id": 569750
-            }
+                {
+                    "id": 569750
+                }
         ],
         "features": {
             "internal": [],
@@ -371,23 +371,23 @@ let properties = [
             "position": "0"
         },
         "galleries": [
-            {
-                "0": {
+                {
                     "id": 22948445,
                     "url": "https://images.wasi.co/inmuebles/b15905120180607040549.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905120180607040549.jpg",
                     "description": "",
                     "position": "0"
                 },
-                "1": {
+                {
                     "id": 22948447,
                     "url": "https://images.wasi.co/inmuebles/b15905220180607040550.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905220180607040550.jpg",
                     "description": "",
                     "position": "1"
                 },
-                "id": 568255
-            }
+                {
+                    "id": 568255
+                }
         ],
         "features": {
             "internal": [],
@@ -471,23 +471,23 @@ let properties = [
             "position": "0"
         },
         "galleries": [
-            {
-                "0": {
+                {
                     "id": 22903479,
                     "url": "https://images.wasi.co/inmuebles/b15905120180606053854.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905120180606053854.jpg",
                     "description": "",
                     "position": "0"
                 },
-                "1": {
+                {
                     "id": 22903480,
                     "url": "https://images.wasi.co/inmuebles/b15905220180606053854.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905220180606053854.jpg",
                     "description": "",
                     "position": "1"
                 },
-                "id": 566663
-            }
+                {
+                    "id": 566663
+                }
         ],
         "features": {
             "internal": [],
@@ -571,23 +571,24 @@ let properties = [
             "position": "0"
         },
         "galleries": [
-            {
-                "0": {
+                {
                     "id": 22898900,
                     "url": "https://images.wasi.co/inmuebles/b15905120180606043059.png",
                     "url_big": "https://images.wasi.co/inmuebles/g15905120180606043059.png",
                     "description": "",
                     "position": "0"
                 },
-                "1": {
+                {
                     "id": 22898901,
                     "url": "https://images.wasi.co/inmuebles/b15905320180606043227.png",
                     "url_big": "https://images.wasi.co/inmuebles/g15905320180606043227.png",
                     "description": "",
                     "position": "2"
                 },
+                {
+
                 "id": 554353
-            }
+                }
         ],
         "features": {
             "internal": [],
@@ -671,16 +672,16 @@ let properties = [
             "position": "0"
         },
         "galleries": [
-            {
-                "0": {
+                {
                     "id": 22899780,
                     "url": "https://images.wasi.co/inmuebles/b15905120180606044202.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905120180606044202.jpg",
                     "description": "",
                     "position": "0"
                 },
-                "id": 554347
-            }
+                {
+                    "id": 554347
+                }
         ],
         "features": {
             "internal": [],
@@ -764,16 +765,17 @@ let properties = [
             "position": "0"
         },
         "galleries": [
-            {
-                "0": {
+                {
                     "id": 22900720,
                     "url": "https://images.wasi.co/inmuebles/b15905120180606045352.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905120180606045352.jpg",
                     "description": "",
                     "position": "0"
                 },
+                {
+
                 "id": 554340
-            }
+                }
         ],
         "features": {
             "internal": [],
@@ -857,23 +859,24 @@ let properties = [
             "position": "1"
         },
         "galleries": [
-            {
-                "0": {
+                {
                     "id": 22904251,
                     "url": "https://images.wasi.co/inmuebles/b15905120180606055049.png",
                     "url_big": "https://images.wasi.co/inmuebles/g15905120180606055049.png",
                     "description": "",
                     "position": "1"
                 },
-                "1": {
+                {
                     "id": 22904252,
                     "url": "https://images.wasi.co/inmuebles/b15905220180606055052.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905220180606055052.jpg",
                     "description": "",
                     "position": "2"
                 },
+                {
+
                 "id": 554328
-            }
+                }
         ],
         "features": {
             "internal": [],
@@ -957,16 +960,17 @@ let properties = [
             "position": "0"
         },
         "galleries": [
-            {
-                "0": {
+                {
                     "id": 22902588,
                     "url": "https://images.wasi.co/inmuebles/b15905120180606052217.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905120180606052217.jpg",
                     "description": "",
                     "position": "0"
                 },
+                {
+
                 "id": 554321
-            }
+                }
         ],
         "features": {
             "internal": [],
@@ -1050,16 +1054,16 @@ let properties = [
             "position": "1"
         },
         "galleries": [
-            {
-                "0": {
+                {
                     "id": 22898722,
                     "url": "https://images.wasi.co/inmuebles/b15905120180606035456.jpg",
                     "url_big": "https://images.wasi.co/inmuebles/g15905120180606035456.jpg",
                     "description": "",
                     "position": "1"
                 },
-                "id": 554154
-            }
+                {
+                    "id": 554154
+                }
         ],
         "features": {
             "internal": [],
