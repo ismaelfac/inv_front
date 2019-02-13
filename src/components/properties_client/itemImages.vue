@@ -6,7 +6,7 @@
 			</div>
 		</div>
 		<button @click="prevSlide" :disabled="currentSlide===0" class="submit-btn-1">Anterior</button>
-		<button @click="nextSlide" :disabled="currentSlide===images.length - 1" class="submit-btn-1">Siguiente</button>
+		<button @click="nextSlide" :disabled="currentSlide===images.length - 2" class="submit-btn-1">Siguiente</button>
 	</div>	
 </template>
 <script>
