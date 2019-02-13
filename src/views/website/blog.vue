@@ -38,10 +38,16 @@
                             </div>               
                         </div>   
                         <div class="col-md-4 col-xs-12">
-                            <!-- widget-search -->
-                            <aside class="widget widget-search mb-30">
+                            <!-- widget-recent-post -->
+                            <aside class="widget widget-recent-post mb-50">
+                                <h5>Clasificados</h5>
                                 <router-link tag="a" :to="{ name: 'classifieds.create' }"class="btn btn-danger btn-block">Quiero registrar un Inmueble</router-link>
-                                
+                                <div class="row">
+                                    <!-- blog-item -->
+                                    <div class="col-md-12 col-sm-6 col-xs-12">
+                                        <classifieds-item v-for="classified in classifieds" :key="classified.id" :classified="classified"></classifieds-item>
+                                    </div>
+                                </div>
                             </aside>
                             <!-- widget-search -->
                             <aside class="widget widget-search mb-30">
@@ -57,72 +63,6 @@
                                     <li v-for="category in categories" :key="category.id" :category="category"><a href="#">{{ category.title}} <span>{{ category.post_total}}</span></a></li>
                                   
                                 </ul>
-                            </aside>
-                            <!-- widget-recent-post -->
-                            <aside class="widget widget-recent-post mb-50">
-                                <h5>Lo ultimo en Inmuebles</h5>
-                                <div class="row">
-                                    <!-- blog-item -->
-                                    <div class="col-md-12 col-sm-6 col-xs-12">
-                                        <article class="recent-post-item">
-                                            <div class="recent-post-image">
-                                                <a href="single-blog.html"><img src="/src/assets/website/images/recent-post/1.jpg" alt=""></a>
-                                            </div>
-                                            <div class="recent-post-info">
-                                                <div class="recent-post-title-time">
-                                                    <h5><a href="single-blog.html">Maridland de Villa</a></h5>
-                                                    <p>July 30, 2016 / 10 am</p>
-                                                </div>
-                                                <p>Lorem must explain to you how all this mistaolt</p>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <!-- blog-item -->
-                                    <div class="col-md-12 col-sm-6 col-xs-12">
-                                        <article class="recent-post-item">
-                                            <div class="recent-post-image">
-                                                <a href="single-blog.html"><img src="/src/assets/website/images/recent-post/2.jpg" alt=""></a>
-                                            </div>
-                                            <div class="recent-post-info">
-                                                <div class="recent-post-title-time">
-                                                    <h5><a href="single-blog.html">Maridland de Villa</a></h5>
-                                                    <p>July 30, 2016 / 10 am</p>
-                                                </div>
-                                                <p>Lorem must explain to you how all this mistaolt</p>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <!-- blog-item -->
-                                    <div class="col-md-12 col-sm-6 col-xs-12">
-                                        <article class="recent-post-item">
-                                            <div class="recent-post-image">
-                                                <a href="single-blog.html"><img src="/src/assets/website/images/recent-post/3.jpg" alt=""></a>
-                                            </div>
-                                            <div class="recent-post-info">
-                                                <div class="recent-post-title-time">
-                                                    <h5><a href="single-blog.html">Maridland de Villa</a></h5>
-                                                    <p>July 30, 2016 / 10 am</p>
-                                                </div>
-                                                <p>Lorem must explain to you how all this mistaolt</p>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <!-- blog-item -->
-                                    <div class="col-md-12 col-sm-6 col-xs-12">
-                                        <article class="recent-post-item">
-                                            <div class="recent-post-image">
-                                                <a href="single-blog.html"><img src="/src/assets/website/images/recent-post/3.jpg" alt=""></a>
-                                            </div>
-                                            <div class="recent-post-info">
-                                                <div class="recent-post-title-time">
-                                                    <h5><a href="single-blog.html">Maridland de Villa</a></h5>
-                                                    <p>July 30, 2016 / 10 am</p>
-                                                </div>
-                                                <p>Lorem must explain to you how all this mistaolt</p>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
                             </aside>
                             <!-- widget-twitter -->
                             <aside class="widget widget-twitter mb-60">
@@ -181,22 +121,20 @@ import store from '../../store'
 import blog from '../../components/blog/List.vue'
 import posts from '../../components/posts/ListItem.vue'
 import subscribe from '../../components/subscribe/subscribe.vue'
+import Classifieds from '../../components/classifieds/classifiedsClient.vue'
 export default {
     name: 'blog',
     components: {
         subscribe,
         blog,
-        'list-item': posts
+        'list-item': posts,
+        'classifieds-item': Classifieds
     },
     props:['id'],
-    data () {
-        return {
-            
-        }
-    },
     computed: {
         posts: () => store.state.posts,
-        categories: () => store.state.categories
+        categories: () => store.state.categories,
+        classifieds: () => store.state.classifieds
     },
     methods: {
         search_post() {

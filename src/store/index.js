@@ -4,6 +4,7 @@ import tasks from './tasks.js'
 import comments from './comments.js'
 import posts from './modules/posts.js'
 import categories from './modules/categories.js'
+import classifieds from './modules/classifields.js'
 
 Vue.use(Vuex)
 
@@ -12,7 +13,8 @@ export default new Vuex.Store({
         tasks,
         comments,
         posts, 
-        categories
+        categories,
+        classifieds
     },
     getters: {
         findTask(state) {
@@ -34,6 +36,13 @@ export default new Vuex.Store({
                 let commment = state.comments.find(comment => comment.id == id)
                 not_found_unless(comment);
                 return comment;
+            }
+        },
+        findClassified(state){
+            return function (id){
+                let classified = state.classifieds.find(classified => classified.id == id)
+                not_found_unless(classified);
+                return classified;
             }
         }
     },

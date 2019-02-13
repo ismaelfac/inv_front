@@ -8,7 +8,7 @@ export default {
             props: {
                 title: 'Nueva Clasificado',
                 action: 'Crear Clasificado',
-                task: {
+                classified: {
                     title: '',
                     description: ''
                 }
@@ -20,7 +20,7 @@ export default {
                         console.log('paso la validacion')
                        store.dispatch('createTask', draft).then(newTask => {
                             this.$router.push({
-                                name: 'tasks.details',
+                                name: 'classifieds.details',
                                 params: {id: newTask.id }
                             });
                         }).catch(error => {

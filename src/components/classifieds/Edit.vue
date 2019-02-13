@@ -5,8 +5,8 @@ import Form from '../Forms/frm_classified.vue'
 export default {
 	props: ['id'],
 	computed: {
-		task() {
-			return store.getters.findTask(this.id)
+		classified() {
+			return store.getters.findClassifield(this.id)
 		}
 	},
 	render(createElement) {
@@ -14,13 +14,13 @@ export default {
 			props: {
 				title: 'Editar tarea',
 				action: 'Actualizar tarea',
-				task: this.task
+				classified: this.classified
 			},
 			on: {
 				validateBeforeSubmit: (draft) => {
 					store.dispatch('updateTask', { id: this.id, draft });
 					this.$router.push({
-						name: 'tasks.details',
+						name: 'classifieds.details',
 						params: {id: this.id}
 					});
 				}

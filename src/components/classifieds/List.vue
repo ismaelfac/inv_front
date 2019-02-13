@@ -4,12 +4,12 @@
             <div class="container">
                 <div class="col-xs-6 col-md-6">
                     <div class="top">
-                        <h2>Clasificados</h2>
-                        <router-link tag="a" :to="{ name: 'tasks.create' }" class="btn btn-success">Nueva Clasificado</router-link>
+                        <h2>Mis Clasificados</h2>
+                        <router-link tag="a" :to="{ name: 'clasifields.create' }" class="btn btn-success">Nuevo Clasificado</router-link>
                     </div>
 
                     <div class="pro-details-feedback">
-                        <task-item v-for="task in comments" :key="task.id" :task="task"></task-item>
+                        <task-item v-for="clasifield in clasifields" :key="clasifield.id" :clasifield="clasifield"></task-item>
                     </div>
                     <p><a @click="deleteCompleted">Eliminar Clasificados Revisados</a></p>            
                 </div>
@@ -28,7 +28,7 @@ import TaskItem from './ListItem.vue'
 
 export default {
     computed: {
-        comments: () => store.state.comments
+        clasifields: () => store.state.clasifields
     },
     components: {
         'task-item': TaskItem
