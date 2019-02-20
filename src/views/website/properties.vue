@@ -21,7 +21,14 @@
 <section id="page-content" class="page-wrapper">
 
     <div class="blog-area pt-115 pb-120">
-        <router-view></router-view>
+        <template>
+            <router-view></router-view>
+        </template>
+        <template>
+            <div>
+                
+            </div>
+        </template>
     </div>
              
     <!-- SUBSCRIBE AREA START -->

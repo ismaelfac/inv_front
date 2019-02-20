@@ -31,11 +31,11 @@
             <div class="flat-item-info">
                 <div class="flat-title-price">
                     <h5><a href="#!" @click.prevent="details_property">{{ property.title | capitalizeAll }} </a></h5>
-                    <span v-if="property.for_sale == 'true'" class="price">{{ property.sale_price_label}}</span>
-                    <span v-if="property.for_rent == 'true'" class="price">{{ property.rent_price_label}}</span>
-                    <span v-if="property.for_transfer == 'true'" class="price">{{ property.rent_price_label }} / {{ property.sale_price_label }}</span>
+                    
                 </div>
-                <p><img src="/src/assets/website/images/icons/location.png" alt="">{{ property.address | capitalizeAll }}</p>
+                <span v-if="property.for_sale == 'true'" class="price pull-right">{{ property.sale_price_label}}</span>
+                <span v-if="property.for_rent == 'true'" class="price pull-right">{{ property.rent_price_label}}</span>
+                <span v-if="property.for_transfer == 'true'" class="price pull-right">{{ property.rent_price_label }} / {{ property.sale_price_label }}</span>
             </div>
         </div>
     </div>

@@ -1,21 +1,24 @@
 <template>
-    <div>
-       <ul class="list-group">
-           <li class="list-group-item"><a href="">recommended</a></li>
-           <li class="list-group-item"><a href="">recommended</a></li>
-           <li class="list-group-item"><a href="">recommended</a></li>
-           <li class="list-group-item"><a href="">recommended</a></li>
-           <li class="list-group-item"><a href="">recommended</a></li>
-           <li class="list-group-item"><a href="">recommended</a></li>
-       </ul>
-    </div>
+    <!-- TESTIMONIAL AREA START -->
+        <div class="testimonial-area pb-115">
+            <div class="container">
+                <div class="row">
+                    <properties-app :properties="properties"></properties-app>
+                </div>
+            </div>
+        </div>
+    <!-- TESTIMONIAL AREA END -->       
 </template>
 <script>
 import store from '../../store'
+import properties from '../../components/properties_client/properties_panel.vue'
 export default {
     name: 'Recommended',
+    components: {
+        'properties-app':properties
+    },
     computed: {
-        ads: () => store.state.tasks
+        properties: () => store.state.properties
     }
 }
 </script>

@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="blog-details-title-time">
-                                <h5>Notificaciones <div class="pull-right pr-50"><a href="" class="btn btn-danger">Reportar Anomalia</a></div></h5>
+                                <h5>Notificaciones <div class="pull-right pr-50"><button class="btn btn-danger" id="show-modal" @click="showModal = true">Reportar Anomalia</button></div></h5>
                                 <p><div class="alert" :class="client.alert_client" role="alert"><a href="#">{{ client.message }}</a></div></p>
                             </div>
                         </div>
@@ -18,7 +18,7 @@
                                 <div class="thumbnail">
                                   <div class="caption">
                                     <p class="query_text">{{ client.recommended }}</p>
-                                    <a href="#!" @click="get_recommended"><h4 style="text-align:center">Recomendadas</h4></a>
+                                    <a href="" @click.prevent="get_recommended"><h4 style="text-align:center">Recomendadas</h4></a>
                                   </div>
                                 </div>
                               </div>
@@ -26,7 +26,7 @@
                                 <div class="thumbnail">
                                   <div class="caption">
                                     <p class="query_text">{{ client.my_ads }}</p>
-                                    <a href="#!" @click="get_ads"><h4 style="text-align:center">Mis Anuncios</h4></a>
+                                    <a href="" @click.prevent="get_ads"><h4 style="text-align:center">Mis Anuncios</h4></a>
                                   </div>
                                 </div>
                               </div>
@@ -34,7 +34,7 @@
                                 <div class="thumbnail">
                                   <div class="caption">
                                     <p class="query_text">{{ client.my_messages.no_read }}</p>
-                                    <a href="#!" @click="get_myMessages"><h4 style="text-align:center">Mis Mensajes</h4></a>
+                                    <a href="" @click.prevent="get_myMessages"><h4 style="text-align:center">Mis Mensajes</h4></a>
                                   </div>
                                 </div>
                               </div>
@@ -42,7 +42,7 @@
                                 <div class="thumbnail">
                                   <div class="caption">
                                     <p class="query_text">{{ client.my_properties }}</p>
-                                    <a href="#!" @click="get_myProperties"><h4 style="text-align:center">Mis Propiedades</h4></a>
+                                    <a href="" @click.prevent="get_myProperties"><h4 style="text-align:center">Mis Propiedades</h4></a>
                                   </div>
                                 </div>
                               </div>
@@ -296,7 +296,7 @@
                                     <!-- widget-video -->
                                     <aside class="widget widget-video">
                                         <h5>Categorias</h5>
-                                        
+                                                  
                                     </aside>
                                 </div>
                             </div>
@@ -304,17 +304,25 @@
                     </div>
                 </div>
             </div>
+            <modal v-if="showModal" @close="showModal = false">
+                <h3 slot="header">Reporte de Anomalia</h3>
+                <div slot="body"><report></report></div>
+            </modal>
         <!-- FEATURED FLAT AREA END -->
     </section>
     <!-- End page content -->
 </template>
 <script>
 import store from '../../store'
+import Modal from '../modal/modalComponent.vue'
 import Recommended from './recommended.vue'
-import Ads from "./ads.vue";
+import Ads from "./ads.vue"
+import report from '../anomalies/report.vue'
     export default {
         name: 'panelClient',
         components: {
+            'modal': Modal,
+            report,
             'recommended': Recommended,
             'my-ads': Ads
         },
@@ -323,6 +331,7 @@ import Ads from "./ads.vue";
         },
         data () {
             return {
+                showModal: false,
                 recommended: false,
                 my_ads: false,
                 my_messages: false,
@@ -332,6 +341,7 @@ import Ads from "./ads.vue";
         },
         methods:{
             get_recommended() {
+                this.showModal = true;
                 this.changeActivityOptions();
                 this.recommended = true;
             },
