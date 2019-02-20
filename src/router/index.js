@@ -30,6 +30,9 @@ import CommentEdit from '../components/comments/Edit.vue'
 import CommentCreate from '../components/comments/Create.vue'
 import CommentDetails from '../components/comments/Details.vue'
 
+//panel
+import Recommended from '../components/panelClient/recommended.vue'
+
 Vue.use(Router)
 
 const router = new Router({
@@ -61,7 +64,13 @@ const router = new Router({
 			path: '/contact',
 			name: 'contact',
             component: Contact
-        },
+		},
+		// Panel client
+		{
+			path: '/recommended',
+			name: 'recomendadas',
+			component: Recommended
+		},
         // properties
         {
 			path: '/properties',
