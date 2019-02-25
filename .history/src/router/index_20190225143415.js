@@ -3,6 +3,9 @@ import Router from 'vue-router'
 
 import ErrorNotFound from '../components/errors/NotFound.vue'
 
+//login
+import Login from '../components/auth/Login.vue'
+
 import Content from '../views/Content.vue'
 import About from '../views/website/about.vue'
 import Brands from '../views/website/brands.vue'
@@ -42,7 +45,11 @@ const router = new Router({
 			path: '/',
 			name: 'content',
             component: Content
-        },
+		},
+		{
+			path: '/login',
+			component: Login
+		},
         {
 			path: '/about',
 			name: 'about',

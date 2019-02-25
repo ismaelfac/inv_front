@@ -39,20 +39,19 @@
                                 <ul class="nav navbar-nav navbar-right">
                                     <!-- Authentication Links -->
                                     <template v-if="!current_user">
-                                        <li><router-link to="/login" class="nav-link">Login</router-link></li>
-                                        <li><router-link to="/register" class="nav-link">Registrarme</router-link></li>
+                                        <li><a href="#">Login</a></li>
+                                        <li><a href="#">Registrarme</a></li>
                                     </template>
                                     <template v-else>
                                         <nav id="primary-menu">
                                             <ul class="main-menu text-center">
-                                                 <li class="nav-item dropdown">
-                                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
-                                                        {{ currentUser.name }} <span class="caret"></span>
+                                                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                                    Ismael E. Lastre Alvarez
+                                                        <span class="caret"></span>
                                                     </a>
-
-                                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                        <a href="#!" @click.prevent="logout" class="dropdown-item">Logout</a>
-                                                    </div>
+                                                    <ul class="drop-menu">
+                                                        <li> <a href="#">Salir</a></li>
+                                                    </ul>
                                                 </li>
                                             </ul>
                                         </nav>

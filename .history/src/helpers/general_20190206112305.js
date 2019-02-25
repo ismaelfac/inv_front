@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 export function initialize(store, router) {
     router.beforeEach((to, from, next) => {
         const requiresAuth = to.matched.some(record => record.meta.requiresAuth);

@@ -1,12 +1,12 @@
 import '@babel/polyfill'
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Vuex from 'vuex';
-import VeeValidate from 'vee-validate';
-import {routes} from './routes';
-import StoreData from './store';
-import App from './views/App.vue';
-import {initialize}  from './helpers/general';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Vuex from 'vuex'
+import VeeValidate from 'vee-validate'
+import {routes} from './routes'
+import StoreData from './store'
+import App from './views/App.vue'
+import {initialize}  from './helpers/general'
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
