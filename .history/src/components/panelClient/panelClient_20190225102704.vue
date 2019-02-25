@@ -50,7 +50,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <router-link tag="a" :to="{ name: 'tasks.create' }" class="btn btn-primary">Vincular un Inmueble</router-link>
-                                <a href="" class="btn btn-primary" @click.prevent="get_classifieds">Clasificados</a>
+                                <a href="" class="btn btn-primary" @click.prevent="get_classifieds">Crear mi Clasificado</a>
                             </div>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                                     </template>
                                     <template v-else-if="my_properties">
                                         <div>
-                                            <properties></properties>
+                                            <h2>Mis propiedades</h2>
                                         </div>
                                     </template>
                                     <template v-else-if="featured_properties">
@@ -85,7 +85,7 @@
                                     </template>
                                     <template v-else-if="classifieldsClient">
                                         <div>
-                                            <classifields   ></classifields>
+                                            <classifields :classified="classified"></classifields>
                                         </div>
                                     </template>
                                 </div>
@@ -108,8 +108,7 @@ import Modal from '../modal/modalComponent.vue'
 import Recommended from './recommended.vue'
 import Ads from "./ads.vue"
 import report from '../anomalies/report.vue'
-import classifields from '../Task/List.vue'
-import properties from '../properties_client/properties.vue'
+import classifields from '../classifieds/classifiedsClient.vue'
     export default {
         name: 'panelClient',
         components: {
@@ -117,11 +116,11 @@ import properties from '../properties_client/properties.vue'
             report,
             classifields,
             'recommended': Recommended,
-            'my-ads': Ads,
-            properties
+            'my-ads': Ads
         },
         computed: {
-            client: () => store.state.client
+            client: () => store.state.client,
+            classifield: () => store.state.classifieds
         },
         data () {
             return {

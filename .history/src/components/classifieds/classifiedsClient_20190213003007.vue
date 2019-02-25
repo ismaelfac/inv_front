@@ -40,6 +40,7 @@ export default {
     }
 }
 </script>
+
 <style lang="scss">
     .top {
         display: flex;

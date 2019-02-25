@@ -6,7 +6,7 @@ export default {
     render(createElement) {
         return createElement(Form, {
             props: {
-                title: 'Nuevo Clasificado',
+                title: 'Nueva Clasificado',
                 action: 'Crear Clasificado',
                 task: {
                     title: '',

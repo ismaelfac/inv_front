@@ -50,7 +50,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <router-link tag="a" :to="{ name: 'tasks.create' }" class="btn btn-primary">Vincular un Inmueble</router-link>
-                                <a href="" class="btn btn-primary" @click.prevent="get_classifieds">Clasificados</a>
+                                <router-link tag="a" :to="{ name: 'classifieds' }" class="btn btn-primary">Crear mi Clasificado</router-link>
                             </div>
                         </div>
                     </div>
@@ -75,17 +75,12 @@
                                     </template>
                                     <template v-else-if="my_properties">
                                         <div>
-                                            <properties></properties>
+                                            <h2>Mis propiedades</h2>
                                         </div>
                                     </template>
                                     <template v-else-if="featured_properties">
                                         <div>
                                             <h2>Propiedades Destacadas</h2>
-                                        </div>
-                                    </template>
-                                    <template v-else-if="classifieldsClient">
-                                        <div>
-                                            <classifields   ></classifields>
                                         </div>
                                     </template>
                                 </div>
@@ -108,17 +103,13 @@ import Modal from '../modal/modalComponent.vue'
 import Recommended from './recommended.vue'
 import Ads from "./ads.vue"
 import report from '../anomalies/report.vue'
-import classifields from '../Task/List.vue'
-import properties from '../properties_client/properties.vue'
     export default {
         name: 'panelClient',
         components: {
             'modal': Modal,
             report,
-            classifields,
             'recommended': Recommended,
-            'my-ads': Ads,
-            properties
+            'my-ads': Ads
         },
         computed: {
             client: () => store.state.client
@@ -130,8 +121,7 @@ import properties from '../properties_client/properties.vue'
                 my_ads: false,
                 my_messages: false,
                 my_properties: false,
-                featured_properties: true,
-                classifieldsClient: false
+                featured_properties: true
             }
         },
         methods:{
@@ -152,17 +142,12 @@ import properties from '../properties_client/properties.vue'
                 this.changeActivityOptions();
                 this.my_properties = true;
             },
-            get_classifieds() {
-                this.changeActivityOptions();
-                this.classifieldsClient = true;
-            },
             changeActivityOptions() {
                 this.recommended = false;
                 this.my_ads = false;
                 this.my_messages = false;
                 this.my_properties = false;
                 this.featured_properties = false;
-                this.classifieldsClient = false;
             }
         }
     }

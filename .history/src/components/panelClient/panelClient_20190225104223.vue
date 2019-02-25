@@ -75,7 +75,7 @@
                                     </template>
                                     <template v-else-if="my_properties">
                                         <div>
-                                            <properties></properties>
+                                            <h2>Mis propiedades</h2>
                                         </div>
                                     </template>
                                     <template v-else-if="featured_properties">
@@ -109,7 +109,6 @@ import Recommended from './recommended.vue'
 import Ads from "./ads.vue"
 import report from '../anomalies/report.vue'
 import classifields from '../Task/List.vue'
-import properties from '../properties_client/properties.vue'
     export default {
         name: 'panelClient',
         components: {
@@ -117,8 +116,7 @@ import properties from '../properties_client/properties.vue'
             report,
             classifields,
             'recommended': Recommended,
-            'my-ads': Ads,
-            properties
+            'my-ads': Ads
         },
         computed: {
             client: () => store.state.client
