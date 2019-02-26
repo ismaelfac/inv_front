@@ -103,7 +103,7 @@
     <!-- End page content -->
 </template>
 <script>
-import store from '../../store.js'
+import store from '../../store'
 import Modal from '../modal/modalComponent.vue'
 import Recommended from './recommended.vue'
 import Ads from "./ads.vue"

@@ -1,4 +1,4 @@
-let clients = {
+let client = {
     id: '1',
     type_client: 'admin',
     alert_client: 'alert-info',
@@ -22,4 +22,4 @@ let clients = {
     ]
 };
 
-export default clients;
+export default client;
