@@ -123,7 +123,7 @@ import properties from '../properties_client/properties.vue'
         props:['currentUser'],
         computed: {
             client() {
-                return store.getters.findCLient(this.currentUser.id)
+                return store.getters.findCLient(this.currentUer.id)
             }
         },
         data () {

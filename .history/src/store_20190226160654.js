@@ -4,7 +4,7 @@ import posts from './store/modules/posts.js'
 import categories from './store/modules/categories.js'
 import classifieds from './store/modules/classifields.js'
 import properties from './store/modules/properties.js'
-import clients from './store/modules/clients.js'
+import client from './store/modules/clients.js'
 import { getLocalUser } from './helpers/auth.js';
 
 const user = getLocalUser();
@@ -21,7 +21,7 @@ export default {
         categories,
         classifieds,
         properties,
-        clients
+        client
     },
     getters: {
         isLoading(state){
@@ -45,9 +45,9 @@ export default {
         },
         findCLient(state) {
             return function (id){
-         		let client = state.clients.find(client => client.id == id)
-                not_found_unless(client);
-                return client;    
+         		let task = state.tasks.find(task => task.id == id)
+                not_found_unless(task);
+                return task;    
             }
         },
         findPost(state) {

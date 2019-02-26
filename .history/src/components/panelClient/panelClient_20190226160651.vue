@@ -120,10 +120,9 @@ import properties from '../properties_client/properties.vue'
             'my-ads': Ads,
             properties
         },
-        props:['currentUser'],
         computed: {
             client() {
-                return store.getters.findCLient(this.currentUser.id)
+                return store.getters.findCLient(currentUser.id)
             }
         },
         data () {
