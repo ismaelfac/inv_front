@@ -43,6 +43,7 @@
     </div>
 </template>
 <script>
+import store from '../../store.js'
 import {login} from "../../helpers/auth";
 export default {
     name: 'Login',
@@ -58,7 +59,6 @@ export default {
     methods:{
         authenticate(){
             this.$store.dispatch('login');
-            console.log("entro al login");
             login(this.$data.form).then((res) => {
                 this.$store.commit("loginSuccess", res);
                 this.$router.push({path: '/'});

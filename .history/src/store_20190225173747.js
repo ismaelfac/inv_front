@@ -119,7 +119,6 @@ export default {
     },
     actions: {
         login(context){
-            console.log("entro al actions")
             context.commit('login');
         },
         createTask(context,{ title, description }) {

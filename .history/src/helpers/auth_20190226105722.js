@@ -1,9 +1,9 @@
 import Repository from "./repository";
-const resource = "/auth/login";
+
 export function login(credentials){
     return new Promise((res, rej) => {
         console.log(credentials)
-        Repository.post(`${resource}`).then((response) => {
+        axios.post('http://127.0.0.1:8000/api/auth/login',credentials).then((response) => {
             console.log("entro al response")
             res(response.data)
         }).catch((err) => {

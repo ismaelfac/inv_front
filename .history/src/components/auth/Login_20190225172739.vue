@@ -43,7 +43,7 @@
     </div>
 </template>
 <script>
-import {login} from "../../helpers/auth";
+import { login } from "../../helpers/auth";
 export default {
     name: 'Login',
     data() {
@@ -58,7 +58,6 @@ export default {
     methods:{
         authenticate(){
             this.$store.dispatch('login');
-            console.log("entro al login");
             login(this.$data.form).then((res) => {
                 this.$store.commit("loginSuccess", res);
                 this.$router.push({path: '/'});

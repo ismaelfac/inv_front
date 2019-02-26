@@ -40,6 +40,5 @@ initialize(store, router);
 var vm = new Vue({
   el: '#app',
   router,
-  store,
   render: h => h(App)
 })

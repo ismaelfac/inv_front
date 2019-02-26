@@ -1,5 +1,5 @@
 import Repository from "./repository";
-const resource = "/auth/login";
+const resource = "/auth/login"
 export function login(credentials){
     return new Promise((res, rej) => {
         console.log(credentials)

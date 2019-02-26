@@ -1,13 +1,9 @@
-import Repository from "./repository";
-const resource = "/auth/login";
 export function login(credentials){
     return new Promise((res, rej) => {
-        console.log(credentials)
-        Repository.post(`${resource}`).then((response) => {
-            console.log("entro al response")
+        console.log("entro a la promesa")
+        axios.post('127.0.0.1:8000/api/auth/login',credentials).then((response) => {
             res(response.data)
         }).catch((err) => {
-            console.log("error")
             rej('El email o paswword son incorrectos')
         })
     });

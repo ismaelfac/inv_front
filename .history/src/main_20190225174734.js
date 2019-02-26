@@ -23,8 +23,10 @@ const router = new VueRouter({
 
 window.not_found = function () {
 	console.log('Not found:' + router.currentRoute.fullPath);
+
 	router.replace('/404');
 };
+
 
 window.not_found_unless = function (condition) {
 	if (! condition) {
@@ -40,6 +42,5 @@ initialize(store, router);
 var vm = new Vue({
   el: '#app',
   router,
-  store,
   render: h => h(App)
 })
