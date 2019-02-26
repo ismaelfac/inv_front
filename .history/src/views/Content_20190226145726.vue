@@ -87,7 +87,7 @@
             <!-- End page content -->
         </template>
         <template v-else>
-            <panel-client :currentUser="currentUser"></panel-client>
+            <panel-client></panel-client>
         </template>
     </div>
 </template>

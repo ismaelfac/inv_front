@@ -1,6 +1,6 @@
 <template>
     <div>
-        <template v-if="!currentUser">
+        <div v-if="!currentUser">
             <!-- SLIDER SECTION START -->
             <div class="slider-1 pos-relative slider-overlay">
                 <div class="bend niceties preview-1">
@@ -85,10 +85,10 @@
                         <!-- SUBSCRIBE AREA END -->
             </section>
             <!-- End page content -->
-        </template>
-        <template v-else>
-            <panel-client :currentUser="currentUser"></panel-client>
-        </template>
+        </div>
+        <div v-else>
+            <panel-client></panel-client>
+        </div>
     </div>
 </template>
 <script>

@@ -38,7 +38,7 @@
                             <div class="header-search clearfix">
                                 <ul class="nav navbar-nav navbar-right">
                                     <!-- Authentication Links -->
-                                    <template v-if="!currentUser">
+                                    <template v-if="!current_user">
                                         <li><router-link to="/login" class="nav-link">Login</router-link></li>
                                         <li><router-link to="/register" class="nav-link">Registrarme</router-link></li>
                                     </template>
@@ -123,11 +123,6 @@ export default {
         this.$store.commit('logout');
         this.$router.push('/login');
       }
-    },
-    computed: {
-        currentUser() {
-            return this.$store.getters.currentUser
-        }
     }
 }
 </script>

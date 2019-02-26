@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <t>
         <template v-if="!currentUser">
             <!-- SLIDER SECTION START -->
             <div class="slider-1 pos-relative slider-overlay">
@@ -87,7 +87,7 @@
             <!-- End page content -->
         </template>
         <template v-else>
-            <panel-client :currentUser="currentUser"></panel-client>
+            <panel-client></panel-client>
         </template>
     </div>
 </template>
