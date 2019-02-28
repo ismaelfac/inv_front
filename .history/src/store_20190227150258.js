@@ -44,7 +44,8 @@ export default {
             }
         },
         findClient: (state) => (id) => {
-         		let client = state.clients.find(client => client.id === id)
+                console.log("Id: "+id+". ")
+         		let client = state.clients.find(client => client.id == id)
                 not_found_unless(client);
                 return client;    
         },
@@ -124,6 +125,7 @@ export default {
     },
     actions: {
         login(context){
+            console.log("entro al actions")
             context.commit('login');
         },
         createTask(context,{ title, description }) {

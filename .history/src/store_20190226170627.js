@@ -4,7 +4,7 @@ import posts from './store/modules/posts.js'
 import categories from './store/modules/categories.js'
 import classifieds from './store/modules/classifields.js'
 import properties from './store/modules/properties.js'
-import clients from './store/modules/clients.js'
+import client from './store/modules/clients.js'
 import { getLocalUser } from './helpers/auth.js';
 
 const user = getLocalUser();
@@ -43,10 +43,14 @@ export default {
                 return task;    
             }
         },
-        findClient: (state) => (id) => {
-         		let client = state.clients.find(client => client.id === id)
+        findClient(state) {
+            console.log("Entro a la funcion findclient")
+            return function (id){
+                console.log("Id: "+id+". ")
+         		let client = state.clients.find(client => client.id == id)
                 not_found_unless(client);
                 return client;    
+            }
         },
         findPost(state) {
             return function (id){
@@ -124,6 +128,7 @@ export default {
     },
     actions: {
         login(context){
+            console.log("entro al actions")
             context.commit('login');
         },
         createTask(context,{ title, description }) {

@@ -123,7 +123,8 @@ import properties from '../properties_client/properties.vue'
         props:['id'],
         computed: {
             client() {
-                return this.$store.getters.findClient(this.id)
+                console.log(this.id)
+                return store.getters.findClient(this.id)
             }
         },
         data () {

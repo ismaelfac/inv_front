@@ -43,10 +43,13 @@ export default {
                 return task;    
             }
         },
-        findClient: (state) => (id) => {
-         		let client = state.clients.find(client => client.id === id)
+        findClient: (state) =>  {
+            return function (id){
+                console.log("Id: "+id+". ")
+         		let client = state.clients.find(client => client.id == id)
                 not_found_unless(client);
                 return client;    
+            }
         },
         findPost(state) {
             return function (id){
@@ -124,6 +127,7 @@ export default {
     },
     actions: {
         login(context){
+            console.log("entro al actions")
             context.commit('login');
         },
         createTask(context,{ title, description }) {

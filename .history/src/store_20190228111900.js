@@ -44,6 +44,7 @@ export default {
             }
         },
         findClient: (state) => (id) => {
+                console.log("Id: "+id+". ")
          		let client = state.clients.find(client => client.id === id)
                 not_found_unless(client);
                 return client;    

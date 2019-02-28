@@ -25,13 +25,13 @@ let clients = [
     {
         id: '2',
         type_client: 'asesor',
-        alert_client: 'alert-success',
+        alert_client: 'alert-info',
         img_post: '/src/assets/website/images/blog/blog.jpeg',
-        message: 'Correo Electronico Confirmado',
-        recommended: '3',
-        requirements: '5',
-        my_ads: '1',
-        my_properties: '8',
+        message: 'Confirmar Correo Electronico',
+        recommended: '2',
+        requirements: '1',
+        my_ads: '3',
+        my_properties: '4',
         my_messages: {
             no_read: '6',
 
