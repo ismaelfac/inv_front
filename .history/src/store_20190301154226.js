@@ -5,7 +5,6 @@ import categories from './store/modules/categories.js'
 import classifieds from './store/modules/classifields.js'
 import properties from './store/modules/properties.js'
 import clients from './store/modules/clients.js'
-import session from './store/modules/sessionPanel.js'
 import { getLocalUser } from './helpers/auth.js';
 
 const user = getLocalUser();
@@ -22,8 +21,7 @@ export default {
         categories,
         classifieds,
         properties,
-        clients,
-        session,
+        clients
     },
     getters: {
         isLoading(state){
@@ -37,10 +35,6 @@ export default {
         },
         currentUser(state){
             return state.currentUser;
-        },
-        findSession: (state) => (id) => {
-            let session = state.session.getSession(id)
-            return session;    
         },
         findTask(state) {
             return function (id){

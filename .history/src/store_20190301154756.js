@@ -26,6 +26,9 @@ export default {
         session,
     },
     getters: {
+        inSession(state){
+            return state.session;
+        },
         isLoading(state){
             return state.loading;
         },
@@ -37,10 +40,6 @@ export default {
         },
         currentUser(state){
             return state.currentUser;
-        },
-        findSession: (state) => (id) => {
-            let session = state.session.getSession(id)
-            return session;    
         },
         findTask(state) {
             return function (id){

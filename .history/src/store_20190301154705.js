@@ -22,8 +22,7 @@ export default {
         categories,
         classifieds,
         properties,
-        clients,
-        session,
+        clients
     },
     getters: {
         isLoading(state){
@@ -37,10 +36,6 @@ export default {
         },
         currentUser(state){
             return state.currentUser;
-        },
-        findSession: (state) => (id) => {
-            let session = state.session.getSession(id)
-            return session;    
         },
         findTask(state) {
             return function (id){

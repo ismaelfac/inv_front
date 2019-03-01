@@ -24,7 +24,7 @@ let clients = [
         ]
     },
     {
-        id: '2',
+        id: '1',
         type_client: 'admin',
         alert_client: 'alert-info',
         img_post: '/src/assets/website/images/blog/blog.jpeg',

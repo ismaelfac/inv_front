@@ -39,7 +39,8 @@ export default {
             return state.currentUser;
         },
         findSession: (state) => (id) => {
-            let session = state.session.getSession(id)
+            let session = state.session.find(session => session.id === id)
+            not_found_unless(session);
             return session;    
         },
         findTask(state) {
