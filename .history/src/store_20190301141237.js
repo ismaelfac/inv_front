@@ -59,7 +59,7 @@ export default {
         },
         findComments(state){
             return function (id){
-                let comment = state.comments.find(comment => comment.id == id)
+                let commment = state.comments.find(comment => comment.id == id)
                 not_found_unless(comment);
                 return comment;
             }

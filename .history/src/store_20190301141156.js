@@ -45,7 +45,7 @@ export default {
         },
         findClient: (state) => (id) => {
                 let token = state.currentUser.token;
-                console.log(token);
+                console.log(this.token);
          		let client = state.clients.find(client => client.id === id)
                 not_found_unless(client);
                 return client;    
@@ -59,7 +59,7 @@ export default {
         },
         findComments(state){
             return function (id){
-                let comment = state.comments.find(comment => comment.id == id)
+                let commment = state.comments.find(comment => comment.id == id)
                 not_found_unless(comment);
                 return comment;
             }
